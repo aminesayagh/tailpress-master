@@ -1,5 +1,10 @@
 body{
-      .elementor-button-wrapper{
-            @apply w-auto !important;
+      .op-inner-flex-row{
+            .elementor-widget-wrap{
+                  @apply flex flex-row space-x-6;
+                  > .elementor-element{
+                        @apply w-auto;
+                  }
+            }
       }
 }
