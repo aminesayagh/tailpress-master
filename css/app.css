@@ -863,9 +863,6 @@ video {
 .entry-content ol li, .block-editor-block-list__layout ol li {
 	list-style-type: decimal;
 }
-body {
-	display: none;
-}
 body .elementor-button-wrapper {
 	width: auto !important;
 }
