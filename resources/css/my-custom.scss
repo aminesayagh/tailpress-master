@@ -3,7 +3,10 @@ body{
             .elementor-widget-wrap{
                   @apply flex flex-row space-x-6 items-center;
                   .op-col-full-width{
-                        @apply flex-1;
+                        @apply flex-grow;
+                  }
+                  .op-col-fix-width{
+                        @apply flex-none;
                   }
                   > .elementor-element{
                         @apply w-auto;
