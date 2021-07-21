@@ -877,16 +877,10 @@ body .op-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden])
 	margin-right: calc(1.5rem * var(--tw-space-x-reverse));
 	margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
-body .op-inner-flex-row .elementor-widget-wrap .op-col-full-width {
-	flex-grow: 1;
-}
-body .op-inner-flex-row .elementor-widget-wrap .op-col-fix-width {
-	flex: none;
-}
-body .op-inner-flex-row .elementor-widget-wrap > .elementor-element {
+body .op-inner-flex-row .elementor-widget-wrap >.elementor-element {
 	width: auto;
 }
-body .op-inner-flex-row .elementor-widget-wrap > .elementor-element.elementor-widget:not(:last-child) {
+body .op-inner-flex-row .elementor-widget-wrap >.elementor-element.elementor-widget:not(:last-child) {
 	margin-bottom: 0px !important;
 }
 @media(max-width: 390px){

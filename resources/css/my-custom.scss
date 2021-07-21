@@ -2,16 +2,10 @@ body{
       .op-inner-flex-row{
             .elementor-widget-wrap{
                   @apply flex flex-row space-x-6 items-center;
-                  .op-col-full-width{
-                        @apply flex-grow;
-                  }
-                  .op-col-fix-width{
-                        @apply flex-none;
-                  }
-                  > .elementor-element{
+                  >.elementor-element{
                         @apply w-auto;
                   }
-                  > .elementor-element.elementor-widget:not(:last-child){
+                  >.elementor-element.elementor-widget:not(:last-child){
                         @apply mb-0 !important;
                   }
             }
