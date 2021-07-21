@@ -902,13 +902,13 @@ body .op-inner-flex-row .elementor-widget-wrap > .elementor-element.elementor-wi
 	}
       }
 body .elementor-location-header {
-	position: absolute;
+	position: absolute !important;
 }
 body .elementor-location-header {
-	z-index: 20;
+	z-index: 20 !important;
 }
 body .elementor-location-header {
-	width: 100%;
+	width: 100% !important;
 }
 @media (min-width: 768px) {
 
