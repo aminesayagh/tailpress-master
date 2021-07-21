@@ -1,5 +1,4 @@
 body{
-      // op-inner-flex-row
       .op-inner-flex-row{
             .elementor-widget-wrap{
                   @apply flex flex-row space-x-6 items-center;
@@ -17,5 +16,9 @@ body{
                         @apply space-x-0 space-y-8 !important;
                   }
             }
+      }
+
+      .elementor-location-header{
+            @apply absolute w-full; 
       }
 }

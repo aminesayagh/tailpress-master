@@ -895,6 +895,12 @@ body .op-inner-flex-row .elementor-widget-wrap > .elementor-element.elementor-wi
 		margin-bottom: calc(2rem * var(--tw-space-y-reverse)) !important;
 	}
       }
+body .elementor-location-header {
+	position: absolute;
+}
+body .elementor-location-header {
+	width: 100%;
+}
 @media (min-width: 768px) {
 
 	.md\:text-3xl {
