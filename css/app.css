@@ -883,6 +883,18 @@ body .op-inner-flex-row .elementor-widget-wrap > .elementor-element {
 body .op-inner-flex-row .elementor-widget-wrap > .elementor-element.elementor-widget:not(:last-child) {
 	margin-bottom: 0px !important;
 }
+@media(max-width: 390px){
+                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0 !important;
+		margin-right: calc(0px * var(--tw-space-x-reverse)) !important;
+		margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse))) !important;
+	}
+                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-y-reverse: 0 !important;
+		margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))) !important;
+		margin-bottom: calc(2rem * var(--tw-space-y-reverse)) !important;
+	}
+      }
 @media (min-width: 768px) {
 
 	.md\:text-3xl {
