@@ -31,6 +31,7 @@ module.exports = {
     },
     extend: {
       colors: tailpress.colors,
+      
     },
   },
   plugins: [

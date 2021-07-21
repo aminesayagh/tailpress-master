@@ -672,7 +672,7 @@ video {
 }
 .bg-primary {
 	--tw-bg-opacity: 1;
-	background-color: rgba(14, 165, 233, var(--tw-bg-opacity));
+	background-color: rgba(242, 46, 62, var(--tw-bg-opacity));
 }
 .bg-gray-200 {
 	--tw-bg-opacity: 1;
@@ -724,28 +724,28 @@ video {
 	-moz-osx-font-smoothing: grayscale;
 }
 .has-primary-color {
-	color: #0EA5E9;
+	color: #F22E3E;
 }
 .has-secondary-color {
 	color: #14B8A6;
 }
 .has-dark-color {
-	color: #1F2937;
+	color: #0A1326;
 }
 .has-light-color {
-	color: #F9FAFB;
+	color: #F2F2F2;
 }
 .has-primary-background-color {
-	background-color: #0EA5E9;
+	background-color: #F22E3E;
 }
 .has-secondary-background-color {
 	background-color: #14B8A6;
 }
 .has-dark-background-color {
-	background-color: #1F2937;
+	background-color: #0A1326;
 }
 .has-light-background-color {
-	background-color: #F9FAFB;
+	background-color: #F2F2F2;
 }
 .alignfull {
 	margin: 0.5rem calc(50% - 50vw);
