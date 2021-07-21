@@ -869,6 +869,9 @@ body .op-inner-flex-row .elementor-widget-wrap {
 body .op-inner-flex-row .elementor-widget-wrap {
 	flex-direction: row;
 }
+body .op-inner-flex-row .elementor-widget-wrap {
+	align-items: center;
+}
 body .op-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
 	margin-right: calc(1.5rem * var(--tw-space-x-reverse));
@@ -876,6 +879,9 @@ body .op-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden])
 }
 body .op-inner-flex-row .elementor-widget-wrap > .elementor-element {
 	width: auto;
+}
+body .op-inner-flex-row .elementor-widget-wrap > .elementor-element.elementor-widget:not(:last-child) {
+	margin-bottom: 0px !important;
 }
 @media (min-width: 768px) {
 

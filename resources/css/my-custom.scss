@@ -1,9 +1,12 @@
 body{
       .op-inner-flex-row{
             .elementor-widget-wrap{
-                  @apply flex flex-row space-x-6;
+                  @apply flex flex-row space-x-6 items-center;
                   > .elementor-element{
                         @apply w-auto;
+                  }
+                  > .elementor-element.elementor-widget:not(:last-child){
+                        @apply mb-0 !important;
                   }
             }
       }
