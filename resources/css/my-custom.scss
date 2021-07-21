@@ -2,6 +2,9 @@ body{
       .op-inner-flex-row{
             .elementor-widget-wrap{
                   @apply flex flex-row space-x-6 items-center;
+                  .op-col-full-width{
+                        @apply flex-1;
+                  }
                   > .elementor-element{
                         @apply w-auto;
                   }

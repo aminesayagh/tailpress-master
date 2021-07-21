@@ -877,6 +877,9 @@ body .op-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden])
 	margin-right: calc(1.5rem * var(--tw-space-x-reverse));
 	margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+body .op-inner-flex-row .elementor-widget-wrap .op-col-full-width {
+	flex: 1 1 0%;
+}
 body .op-inner-flex-row .elementor-widget-wrap > .elementor-element {
 	width: auto;
 }
