@@ -867,7 +867,7 @@ body {
 	display: none;
 }
 body .elementor-button-wrapper {
-	width: auto;
+	width: auto !important;
 }
 @media (min-width: 768px) {
 
