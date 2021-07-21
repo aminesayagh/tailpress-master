@@ -899,6 +899,9 @@ body .elementor-location-header {
 	position: absolute;
 }
 body .elementor-location-header {
+	z-index: 20;
+}
+body .elementor-location-header {
 	width: 100%;
 }
 @media (min-width: 768px) {
