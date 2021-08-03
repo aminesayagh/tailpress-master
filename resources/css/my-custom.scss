@@ -21,7 +21,7 @@ body{
       .elementor-location-header{
             @apply absolute w-full z-20 !important;
       }
-      .op-inner-flex-row.with-col{
+      .op-width-col{
             .elementor-column{
                   @apply w-auto !important; 
             }

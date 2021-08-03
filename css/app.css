@@ -904,7 +904,7 @@ body .elementor-location-header {
 body .elementor-location-header {
 	width: 100% !important;
 }
-body .op-inner-flex-row.with-col .elementor-column {
+body .op-width-col .elementor-column {
 	width: auto !important;
 }
 @media (min-width: 768px) {
