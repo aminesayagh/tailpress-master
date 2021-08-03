@@ -169,3 +169,10 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+function manga_script() {
+	wp_register_script('manga', get_template_directory_uri() . '/src/manga.js', array('jquery'),'1.1', true);
+	wp_enqueue_script('manga');
+};
+
+add_action('wp_enqueue_scripts', 'manga_script', 999);
