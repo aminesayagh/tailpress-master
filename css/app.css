@@ -867,9 +867,6 @@ body .op-inner-flex-row .elementor-widget-wrap {
 	display: flex;
 }
 body .op-inner-flex-row .elementor-widget-wrap {
-	width: auto;
-}
-body .op-inner-flex-row .elementor-widget-wrap {
 	flex-direction: row;
 }
 body .op-inner-flex-row .elementor-widget-wrap {
@@ -907,9 +904,9 @@ body .elementor-location-header {
 body .elementor-location-header {
 	width: 100% !important;
 }
-body .op-inner-flex-row .elementor-element{
-                  
-            }
+body .op-inner-flex-row.with-col .elementor-column {
+	width: auto !important;
+}
 @media (min-width: 768px) {
 
 	.md\:text-3xl {

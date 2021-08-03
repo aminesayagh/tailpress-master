@@ -1,7 +1,7 @@
 body{
       .op-inner-flex-row{
             .elementor-widget-wrap{
-                  @apply flex flex-row space-x-6 items-center w-auto;
+                  @apply flex flex-row space-x-6 items-center;
                   >.elementor-element{
                         @apply w-auto;
                   }
@@ -21,10 +21,9 @@ body{
       .elementor-location-header{
             @apply absolute w-full z-20 !important;
       }
-
-      .op-inner-flex-row{
-            .elementor-element{
-                  
+      .op-inner-flex-row.with-col{
+            .elementor-column{
+                  @apply w-auto !important; 
             }
       }
 }
