@@ -2,6 +2,7 @@
       <!-- reference : https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
       <script>
             var postThanks = acf.get('thanks');
+            console.log(postThanks);
       </script>
       <form method="post">
             <button class="flex flex-row" name="buttonThanks">
