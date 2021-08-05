@@ -1,7 +1,7 @@
 <div>
       <!-- reference : https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
       <form method="post" class="h-auto">
-            <button class="flex flex-row items-center px-4 py-2 space-x-2 " name="buttonThanks" style=''>
+            <button class="flex flex-row items-center px-5 py-4 space-x-2 " name="buttonThanks" style=''>
                   <span style="color: #fff">
                         <?php
                               $value = (int) get_field('thank', false, false);
