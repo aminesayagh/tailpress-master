@@ -1,6 +1,6 @@
 <div>
       <button class="flex flex-row ">
-            <p>
+            <p style="color: #fff">
                   <?php
                         $value = get_field('thank', false);
                         if($value){
