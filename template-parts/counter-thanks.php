@@ -6,6 +6,7 @@
                         <script type="text/javascript">
                               jQuery(document).ready(function($){
                                     if (typeof acf == 'undefined') {return};
+                                    alert('coco')
                                     console.log(acf)
                               })
                         </script>
