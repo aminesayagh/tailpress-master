@@ -1,6 +1,6 @@
 <div>
       <!-- reference : https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
-      <form method="post">
+      <form method="post h-auto">
             <button class="flex flex-row" name="buttonThanks">
                   <p style="color: #fff">
                         <?php
@@ -23,10 +23,10 @@
             <p style="color: #fff">
                   <?php
                         if(isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] != false){
-                              $_POST['buttonThanks'] = false;
+                              $_POST['buttonThanks'] = 2;
                               echo $_POST['buttonThanks'];
                         } else if (isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] == false){
-                              $_POST['buttonThanks'] = true;
+                              $_POST['buttonThanks'] = 1;
                               echo $_POST['buttonThanks'];
                         }
                         echo $_POST['buttonThanks'];
