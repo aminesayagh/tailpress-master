@@ -8,6 +8,7 @@
                               if($value){
                                     echo $value;
                               } else{
+                                    echo '0';
                               }
                               
                         ?>
