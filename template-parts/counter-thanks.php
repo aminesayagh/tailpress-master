@@ -4,13 +4,12 @@
             <button class="flex flex-row" name="buttonThanks">
                   <p style="color: #fff">
                         <?php
-                              $value = get_field('thank', false, false);
+                              $value = (int) get_field('thank', false, false);
                               if($value){
                                     echo $value;
                               } else{
                                     echo '0';
                               }
-                              
                         ?>
                   </p>
                   <div class="flex">
@@ -23,12 +22,18 @@
             <p style="color: #fff">
                   <?php
                         if(isset($_POST['buttonThanks'])) {
+                              $value = (int) get_field('thank', false, false);
+                              if(!$value) {
+                                    $value = 0;
+                              }
                               if($_COOKIE['like'] == 0){
+                                    $value++;
                                     setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
                               } else {
+                                    $value--;
                                     setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
                               }
-                              echo 'coco';
+                              update_field('thank', $value);
                         }
                   ?>
             </p>
