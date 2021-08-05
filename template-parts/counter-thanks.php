@@ -20,14 +20,17 @@
                         Thanks!
                   </p>
             </button>
-            <?php
-                  if(isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] != false){
-                        $_POST['buttonThanks'] = false;
+            <p style="color: #fff">
+                  <?php
+                        if(isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] != false){
+                              $_POST['buttonThanks'] = false;
+                              echo $_POST['buttonThanks'];
+                        } else if (isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] == false){
+                              $_POST['buttonThanks'] = true;
+                              echo $_POST['buttonThanks'];
+                        }
                         echo $_POST['buttonThanks'];
-                  } else if (isset($_POST['buttonThanks']) AND $_POST['buttonThanks'] == false){
-                        $_POST['buttonThanks'] = true;
-                        echo $_POST['buttonThanks'];
-                  }
-            ?>
+                  ?>
+            </p>
       </form>
 </div>
