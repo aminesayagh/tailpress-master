@@ -5,7 +5,10 @@
                   <p style="color: #fff">
                         <script type="text/javascript">
                               jQuery(document).ready(function($){
-                                    if (typeof acf == 'undefined') {return};
+                                    if (typeof acf == 'undefined') {
+                                          console.log('kiki')
+                                          return
+                                    };
                                     alert('coco')
                                     console.log(acf)
                               })
