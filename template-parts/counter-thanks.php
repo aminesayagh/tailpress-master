@@ -8,7 +8,6 @@
                               if($value){
                                     echo $value;
                               } else{
-                                    echo '0';
                               }
                               
                         ?>
@@ -22,10 +21,13 @@
             </button>
             <p style="color: #fff">
                   <?php
-                        if($_COOKIE['like'] == 0){
-                              setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
-                        } else {
-                              setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
+                        if(isset($_POST['buttonThanks'])) {
+                              if($_COOKIE['like'] == 0){
+                                    setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
+                              } else {
+                                    setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
+                              }
+                              echo 'coco'
                         }
                   ?>
             </p>
