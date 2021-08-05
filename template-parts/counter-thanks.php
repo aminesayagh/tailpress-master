@@ -5,10 +5,25 @@
                   <p style="color: #fff">
                         <?php
                               $value = (int) get_field('thank', false, false);
-                              if($value){
+                              if(isset($_POST['buttonThanks'])) {
+                                    if(!$value) {
+                                          $value = 0;
+                                    }
+                                    if($_COOKIE['like'] == 0){
+                                          $value++;
+                                          setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
+                                          echo 'if :' + $value;
+                                    } else {
+                                          $value--;
+                                          setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
+                                          echo 'else :' + $value;
+                                    }
+                                    update_field('thank', $value);
+                              }
+                              if($value) {
                                     echo $value;
-                              } else{
-                                    echo '0';
+                              } else {
+                                    echo $value;
                               }
                         ?>
                   </p>
@@ -19,25 +34,5 @@
                         Thanks!
                   </p>
             </button>
-            <p style="color: #fff">
-                  <?php
-                        if(isset($_POST['buttonThanks'])) {
-                              $value = (int) get_field('thank', false, false);
-                              if(!$value) {
-                                    $value = 0;
-                              }
-                              if($_COOKIE['like'] == 0){
-                                    $value++;
-                                    setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
-                                    echo 'if :' + $value;
-                              } else {
-                                    $value--;
-                                    setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
-                                    echo 'else :' + $value;
-                              }
-                              update_field('thank', $value);
-                        }
-                  ?>
-            </p>
       </form>
 </div>
