@@ -1,12 +1,15 @@
 <div>
-      <button class="flex flex-row ">
+      <button class="flex flex-row" name="buttonThanks">
             <p style="color: #fff">
                   <?php
                         $value = get_field('thank', false, false);
                         if($value){
                               echo $value;
                         } else{
-                              echo 'nating';
+                              echo '0';
+                        }
+                        if(isset($_POST['buttonThanks'])){
+                              echo 'this button';
                         }
 		      ?>
             </p>
