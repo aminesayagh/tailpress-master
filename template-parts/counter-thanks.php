@@ -3,15 +3,18 @@
       <form method="post h-auto">
             <button class="flex flex-row" name="buttonThanks">
                   <p style="color: #fff">
+                        
                         <script type="text/javascript">
-                              jQuery(document).ready(function($){
+                              (function($) {
+                                    
                                     if (typeof acf == 'undefined') {
                                           console.log('kiki')
                                           return
                                     };
                                     alert('coco')
                                     console.log(acf)
-                              })
+                                    
+                              })(jQuery);	
                         </script>
                   </p>
                   <div class="flex">
