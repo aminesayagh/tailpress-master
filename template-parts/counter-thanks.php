@@ -1,5 +1,6 @@
 <div>
-      <form method="post" action="">
+      <!-- reference : https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
+      <form method="post">
             <button class="flex flex-row" name="buttonThanks">
                   <p style="color: #fff">
                         <?php
