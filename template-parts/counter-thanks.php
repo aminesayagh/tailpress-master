@@ -23,7 +23,7 @@
       <p style="color: #fff">
             <?php
                   if(isset($_POST['buttonThanks'])) {
-                        echo 'that is work';
+                        echo $_COOKIE['like'];
                         $value = (int) get_field('thank', false, false);
                         if(!$value) {
                               $value = 0;
