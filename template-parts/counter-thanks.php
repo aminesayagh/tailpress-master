@@ -1,6 +1,6 @@
 <div>
       <!-- reference : https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
-      <form method="post h-auto">
+      <form method="post" class="h-auto">
             <button class="flex flex-row" name="buttonThanks">
                   <p style="color: #fff">
                         <?php
