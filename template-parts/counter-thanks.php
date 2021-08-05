@@ -21,9 +21,13 @@
                   </p>
             </button>
             <?php
-                  if(isset($_POST['buttonThanks'])){
-                                    echo 'this button';
-                              }
+                  if(isset($_POST['buttonThanks']) && $_POST['buttonThanks'] != false){
+                        $_POST['buttonThanks'] = false;
+                        echo $_POST['buttonThanks'];
+                  } else if (isset($_POST['buttonThanks']) && $_POST['buttonThanks'] == false){
+                        $_POST['buttonThanks'] = true;
+                        echo $_POST['buttonThanks'];
+                  }
             ?>
       </form>
 </div>
