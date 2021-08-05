@@ -19,24 +19,24 @@
                         Thanks!
                   </p>
             </button>
+            <p style="color: #fff">
+                  <?php
+                        if(isset($_POST['buttonThanks'])) {
+                              echo $_COOKIE['like'];
+                              $value = (int) get_field('thank', false, false);
+                              if(!$value) {
+                                    $value = 0;
+                              }
+                              if($_COOKIE['like'] == 0){
+                                    $value++;
+                                    setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
+                              } else {
+                                    $value--;
+                                    setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
+                              }
+                              update_field('thank', $value);
+                        }
+                  ?>
+            </p>
       </form>
-      <p style="color: #fff">
-            <?php
-                  if(isset($_POST['buttonThanks'])) {
-                        echo $_COOKIE['like'];
-                        $value = (int) get_field('thank', false, false);
-                        if(!$value) {
-                              $value = 0;
-                        }
-                        if($_COOKIE['like'] == 0){
-                              $value++;
-                              setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
-                        } else {
-                              $value--;
-                              setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
-                        }
-                        update_field('thank', $value);
-                  }
-            ?>
-      </p>
 </div>
