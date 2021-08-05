@@ -18,11 +18,7 @@
                                     }
                                     update_field('thank', $value);
                               }
-                              if($value) {
-                                    echo $value;
-                              } else {
-                                    echo $value;
-                              }
+                              echo $value;
                         ?>
                   </p>
                   <div class="flex">
