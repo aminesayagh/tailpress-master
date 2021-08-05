@@ -11,13 +11,11 @@ body{
             }
       }
       @media(max-width: 390px){
-            .ap-inner-flex-row{
-                  .elementor-widget-wrap{
+            .ap-inner-flex-row{                  .elementor-widget-wrap{
                         @apply space-x-0 space-y-8 !important;
                   }
             }
       }
-
       .elementor-location-header{
             @apply absolute w-full z-20 !important;
       }
