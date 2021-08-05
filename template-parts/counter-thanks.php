@@ -27,7 +27,7 @@
                               } else {
                                     setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
                               }
-                              echo 'coco'
+                              echo 'coco';
                         }
                   ?>
             </p>
