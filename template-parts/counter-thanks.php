@@ -22,7 +22,6 @@
             <p style="color: #fff">
                   <?php
                         if(isset($_POST['buttonThanks'])) {
-                              echo $_COOKIE['like'];
                               $value = (int) get_field('thank', false, false);
                               if(!$value) {
                                     $value = 0;
@@ -30,9 +29,11 @@
                               if($_COOKIE['like'] == 0){
                                     $value++;
                                     setcookie('like', '1', time() + 365*24*3600, null, null, false, true);
+                                    echo 'if :' + $value;
                               } else {
                                     $value--;
                                     setcookie('like', '0', time() + 365*24*3600, null, null, false, true);
+                                    echo 'else :' + $value;
                               }
                               update_field('thank', $value);
                         }
