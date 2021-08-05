@@ -2,7 +2,7 @@
       <button class="flex flex-row ">
             <p>
                   <?php
-                        $value = get_field('thank');
+                        $value = get_field('thank', false);
                         if($value){
                               echo $value;
                         } else{
