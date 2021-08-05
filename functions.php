@@ -171,7 +171,7 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
 
 function wpc_elementor_shortcode() {
-	echo 'this is my first code teste';
+	get_template_part( 'template-parts/counter-thanks', 'counter_thanks' );
 };
 
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
