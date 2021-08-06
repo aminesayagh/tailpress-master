@@ -175,3 +175,5 @@ function wpc_elementor_shortcode() {
 };
 
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
+
+get_template_part('api/manga-call', 'manga-api');
