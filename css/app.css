@@ -652,8 +652,14 @@ video {
 .mb-12 {
 	margin-bottom: 3rem;
 }
+.flex {
+	display: flex;
+}
 .hidden {
 	display: none;
+}
+.h-auto {
+	height: auto;
 }
 .w-full {
 	width: 100%;
@@ -667,8 +673,22 @@ video {
 .list-decimal {
 	list-style-type: decimal;
 }
+.flex-row {
+	flex-direction: row;
+}
+.items-center {
+	align-items: center;
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .rounded {
 	border-radius: 0.25rem;
+}
+.rounded-lg {
+	border-radius: 0.5rem;
 }
 .bg-primary {
 	--tw-bg-opacity: 1;
@@ -689,6 +709,14 @@ video {
 .px-3 {
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
+}
+.px-5 {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+.py-4 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 .text-2xl {
 	font-size: 1.5rem;
@@ -883,13 +911,11 @@ body .op-inner-flex-row .elementor-widget-wrap >.elementor-element {
 body .op-inner-flex-row .elementor-widget-wrap >.elementor-element.elementor-widget:not(:last-child) {
 	margin-bottom: 0px !important;
 }
-@media(max-width: 390px){
-                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
+@media(max-width: 390px){                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
 		--tw-space-x-reverse: 0 !important;
 		margin-right: calc(0px * var(--tw-space-x-reverse)) !important;
 		margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse))) !important;
-	}
-                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
+	}                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
 		--tw-space-y-reverse: 0 !important;
 		margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))) !important;
 		margin-bottom: calc(2rem * var(--tw-space-y-reverse)) !important;

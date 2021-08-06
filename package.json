@@ -31,5 +31,8 @@
 		"postcss-nested-ancestors": "^2.0.0",
 		"resolve-url-loader": "^3.1.2",
 		"tailwindcss": "^2.2.0"
+	},
+	"dependencies": {
+		"puppeteer-cluster": "^0.22.0"
 	}
 }

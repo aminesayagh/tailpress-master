@@ -49,8 +49,14 @@
 .mb-12 {
     margin-bottom: 3rem
 }
+.flex {
+    display: flex
+}
 .hidden {
     display: none
+}
+.h-auto {
+    height: auto
 }
 .w-full {
     width: 100%
@@ -64,8 +70,22 @@
 .list-decimal {
     list-style-type: decimal
 }
+.flex-row {
+    flex-direction: row
+}
+.items-center {
+    align-items: center
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
+}
 .rounded {
     border-radius: 0.25rem
+}
+.rounded-lg {
+    border-radius: 0.5rem
 }
 .bg-primary {
     --tw-bg-opacity: 1;
@@ -86,6 +106,14 @@
 .px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem
+}
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem
+}
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem
 }
 .text-2xl {
     font-size: 1.5rem;
