@@ -176,4 +176,13 @@ function wpc_elementor_shortcode() {
 
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
-// get_template_part('api/manga-call', 'manga-api');
+add_action('imit', 'register_brewery_cpt');
+
+function get_breweries_from_api() {
+	  $current_page = ( ! empty($_POST['current_page'])) ? $_POST['current_page'] : 1;
+	  $mangas = [];
+	  $base_url = "https://api.jikan.moe/v3/manga";
+
+	  $results = wp_remote_get($base_url . '/?q=');
+}
+
