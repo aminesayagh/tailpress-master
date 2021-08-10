@@ -1,27 +1,14 @@
 body{
       .op-inner-flex-row{
-            .elementor-widget-wrap{
-                  @apply flex flex-row space-x-6 items-center;
-                  >.elementor-element{
-                        @apply w-auto;
-                  }
-                  >.elementor-element.elementor-widget:not(:last-child){
-                        @apply mb-0 !important;
+            .elementor-container{
+                  @apply space-x-2 sm:space-x-4 md:space-x-6;
+                  .elementor-element{
+                        @apply w-auto !important;
                   }
             }
-      }
-      @media(max-width: 390px){
-            .ap-inner-flex-row{                  .elementor-widget-wrap{
-                        @apply space-x-0 space-y-8 !important;
-                  }
-            }
+            
       }
       .elementor-location-header{
             @apply absolute w-full z-20 !important;
-      }
-      .op-width-col{
-            .elementor-column{
-                  @apply w-auto !important; 
-            }
       }
 }

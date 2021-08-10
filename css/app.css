@@ -891,36 +891,30 @@ video {
 .entry-content ol li, .block-editor-block-list__layout ol li {
 	list-style-type: decimal;
 }
-body .op-inner-flex-row .elementor-widget-wrap {
-	display: flex;
-}
-body .op-inner-flex-row .elementor-widget-wrap {
-	flex-direction: row;
-}
-body .op-inner-flex-row .elementor-widget-wrap {
-	align-items: center;
-}
-body .op-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
+body .op-inner-flex-row .elementor-container > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
-	margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-	margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+	margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
-body .op-inner-flex-row .elementor-widget-wrap >.elementor-element {
-	width: auto;
-}
-body .op-inner-flex-row .elementor-widget-wrap >.elementor-element.elementor-widget:not(:last-child) {
-	margin-bottom: 0px !important;
-}
-@media(max-width: 390px){                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
-		--tw-space-x-reverse: 0 !important;
-		margin-right: calc(0px * var(--tw-space-x-reverse)) !important;
-		margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse))) !important;
-	}                  body .ap-inner-flex-row .elementor-widget-wrap > :not([hidden]) ~ :not([hidden]) {
-		--tw-space-y-reverse: 0 !important;
-		margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))) !important;
-		margin-bottom: calc(2rem * var(--tw-space-y-reverse)) !important;
+@media (min-width: 640px) {
+
+	body .op-inner-flex-row .elementor-container > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(1rem * var(--tw-space-x-reverse));
+		margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 	}
-      }
+}
+@media (min-width: 768px) {
+
+	body .op-inner-flex-row .elementor-container > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+		margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+}
+body .op-inner-flex-row .elementor-container .elementor-element {
+	width: auto !important;
+}
 body .elementor-location-header {
 	position: absolute !important;
 }
@@ -929,9 +923,6 @@ body .elementor-location-header {
 }
 body .elementor-location-header {
 	width: 100% !important;
-}
-body .op-width-col .elementor-column {
-	width: auto !important;
 }
 @media (min-width: 768px) {
 
