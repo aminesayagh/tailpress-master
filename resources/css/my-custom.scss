@@ -2,11 +2,11 @@ body{
       .op-inner-flex-row{
             .elementor-container{
                   @apply space-x-2 sm:space-x-4 md:space-x-6;
+                  @apply w-full !important;
                   .elementor-element{
                         @apply w-auto !important;
                   }
             }
-            
       }
       .elementor-location-header{
             @apply absolute w-full z-20 !important;

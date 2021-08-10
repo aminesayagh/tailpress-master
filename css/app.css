@@ -912,6 +912,9 @@ body .op-inner-flex-row .elementor-container > :not([hidden]) ~ :not([hidden]) {
 		margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 	}
 }
+body .op-inner-flex-row .elementor-container {
+	width: 100% !important;
+}
 body .op-inner-flex-row .elementor-container .elementor-element {
 	width: auto !important;
 }
