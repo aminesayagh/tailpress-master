@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 const animation = {
   animation() {
-    gsap.utils.toArray(".animation").forEach(function (elem) {
+    gsap.utils.toArray(".animation").forEach((elem) => {
       animation.hide(elem);
       animation.animateForm(elem, -1);
     });
