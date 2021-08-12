@@ -9,9 +9,12 @@ body{
             }
       }
       .elementor-location-header{
-            @apply absolute w-full z-20 !important;
+            @apply w-full z-20 !important;
       }
       > .div:nth-child(3){
             @apply overflow-auto;
       }
+}
+body:not() #ob-site-header{
+      @apply fixed z-50 w-full;
 }
