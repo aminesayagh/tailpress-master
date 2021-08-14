@@ -39,11 +39,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       console.log("window loaded")
       gsap.registerPlugin(ScrollTrigger);
       const site_header = document.querySelector("#custom-header");
-      const show_hide_header = grap.from(site_header, {
-        // yPercent:-100,
-        duration: 0.25,
-        ease: "sine.out",
+      const show_hide_header = grap.from("#custom-header", {
+        opacity: 0,
       });
+      show_hide_header();
       ScrollTrigger.create({
         start: "top top",
         onUpdate: (self) => {
