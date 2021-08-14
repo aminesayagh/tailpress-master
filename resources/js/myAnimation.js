@@ -10,9 +10,9 @@ import { gsap } from "gsap";
       const site_header = document.querySelector("#custom-header");
 
       const show_hide_header = grap.from(site_header, {
-        // yPercent: -100,
-        // duration: 0.25,
-        // ease: "sine.out",
+        yPercent: -100,
+        duration: 0.25,
+        ease: "sine.out",
       });
 
       ScrollTrigger.create({
