@@ -12,11 +12,6 @@ body{
             @apply overflow-auto;
       }
 }
-
-.elementor-location-header{
-      margin-top: -86px !important;
-      height: 86px !important;
-}
 #custom-header.elementor-sticky--effects{ 
    background-color: rgba(0, 0, 0, 0.15)!important; 
    backdrop-filter: saturate(180%) blur(20px);

@@ -921,10 +921,6 @@ body .op-inner-flex-row .elementor-container .elementor-element {
 body > .div:nth-child(3) {
 	overflow: auto;
 }
-.elementor-location-header{
-      margin-top: -86px !important;
-      height: 86px !important;
-}
 #custom-header.elementor-sticky--effects{ 
    background-color: rgba(0, 0, 0, 0.15)!important; 
    backdrop-filter: saturate(180%) blur(20px);
