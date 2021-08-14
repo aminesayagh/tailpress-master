@@ -918,14 +918,24 @@ body .op-inner-flex-row .elementor-container {
 body .op-inner-flex-row .elementor-container .elementor-element {
 	width: auto !important;
 }
-body .elementor-location-header {
-	position: absolute !important;
+body .elementor-location-header{
+      }
+body > .div:nth-child(3) {
+	overflow: auto;
 }
-body .elementor-location-header {
-	z-index: 20 !important;
+#custom-header.elementor-sticky--effects{ 
+   background-color: rgba(0,0,0,0.4)!important; 
+   backdrop-filter: saturate(180%) blur(20px);
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
-body .elementor-location-header {
-	width: 100% !important;
+#custom-header{ 
+   transition: background-color 1s ease !important;
+}
+#custom-header.elementor-sticky--effects >.elementor-container{
+   min-height: 70px;
+}
+#custom-header > .elementor-container{
+   transition: min-height 1s ease !important;
 }
 @media (min-width: 768px) {
 
