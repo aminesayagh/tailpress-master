@@ -28,4 +28,12 @@ import { gsap } from "gsap";
       clearInterval(chck_if_gsap_loaded);
     }
   }, 500);
+
+  document.addEventListener("DOMContentLoaded", (e) => {
+    console.log("DOM loaded");
+
+    window.addEventListener("load", (e) => {
+      console.log("window loaded")
+    }, false);
+  });
 })();
