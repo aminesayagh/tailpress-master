@@ -8,16 +8,17 @@ body{
                   }
             }
       }
-      .elementor-location-header{
-      }
       > .div:nth-child(3){
             @apply overflow-auto;
       }
 }
 
-
+.elementor-location-header{
+      margin-top: -86px !important;
+      height: 86px !important;
+}
 #custom-header.elementor-sticky--effects{ 
-   background-color: rgba(0,0,0,0.2)!important; 
+   background-color: rgba(0, 0, 0, 0.15)!important; 
    backdrop-filter: saturate(180%) blur(20px);
    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
