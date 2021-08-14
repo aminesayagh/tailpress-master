@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+
 
 // (function () {
 //   // wait until gsap & ScrollTrigger available
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
       gsap.registerPlugin(ScrollTrigger);
       const site_header = document.querySelector("#custom-header");
       const show_hide_header = grap.from(site_header, {
-        yPercent: -100,
+        // yPercent: -100,
         duration: 0.25,
-        ease: "sine.out",
+        // ease: "sine.out",
       });
       ScrollTrigger.create({
         start: "top top",
