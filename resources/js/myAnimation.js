@@ -7,7 +7,7 @@
       console.log("MY GSAP WORKING " + gsap);
       const site_header = document.querySelector("#custom-header");
 
-      const show_hide_header = grap.from(site_header, {
+      const show_hide_header = grap.from("#custom-header", {
         yPercent: -100,
         duration: 0.25,
         ease: "sine.out",
