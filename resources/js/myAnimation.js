@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           else show_hide_header.reverse();
         },
       });
-      clearInterval(chck_if_gsap_loaded);
+      // clearInterval(chck_if_gsap_loaded);
     }
   }, false);
 });
