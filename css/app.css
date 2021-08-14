@@ -918,13 +918,14 @@ body .op-inner-flex-row .elementor-container {
 body .op-inner-flex-row .elementor-container .elementor-element {
 	width: auto !important;
 }
-body .elementor-location-header{
-      }
+body #custom-header {
+	position: fixed;
+}
 body > .div:nth-child(3) {
 	overflow: auto;
 }
 #custom-header.elementor-sticky--effects{ 
-   background-color: rgba(0,0,0,0.4)!important; 
+   background-color: #1D202620 !important; 
    backdrop-filter: saturate(180%) blur(20px);
    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
