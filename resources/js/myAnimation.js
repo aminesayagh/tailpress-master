@@ -8,9 +8,9 @@
       const site_header = document.querySelector("#custom-header");
 
       const show_hide_header = grap.from("#custom-header", {
-        yPercent: -100,
-        duration: 0.25,
-        ease: "sine.out",
+        // yPercent: -100,
+        // duration: 0.25,
+        // ease: "sine.out",
       });
 
       ScrollTrigger.create({
