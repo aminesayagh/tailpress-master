@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
   console.log("DOM loaded");
 
   window.addEventListener("load", (e) => {
-    console.log("window loaded")
     if(window.gsap && window.ScrollTrigger) {
+      console.log("window loaded")
       gsap.registerPlugin(ScrollTrigger);
     }
   }, false);
