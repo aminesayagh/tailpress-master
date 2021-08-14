@@ -8,8 +8,7 @@ body{
                   }
             }
       }
-      #custom-header{
-            @apply fixed;
+      .elementor-location-header{
       }
       > .div:nth-child(3){
             @apply overflow-auto;
@@ -18,7 +17,7 @@ body{
 
 
 #custom-header.elementor-sticky--effects{ 
-   background-color: #1D202620 !important; 
+   background-color: rgba(0,0,0,0.2)!important; 
    backdrop-filter: saturate(180%) blur(20px);
    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
