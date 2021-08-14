@@ -31,26 +31,26 @@
 
 // })();
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("DOM loaded");
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   console.log("DOM loaded");
 
-  window.addEventListener("load", (e) => {
-    if(window.gsap && window.ScrollTrigger) {
-      console.log("window loaded")
-      gsap.registerPlugin(ScrollTrigger);
-      const site_header = document.querySelector("#custom-header");
-      const show_hide_header = grap.from("#custom-header", {
-        opacity: 0,
-      });
-      show_hide_header();
-      ScrollTrigger.create({
-        start: "top top",
-        onUpdate: (self) => {
-          if (self.direction === -1) show_hide_header.play();
-          else show_hide_header.reverse();
-        },
-      });
-      // clearInterval(chck_if_gsap_loaded);
-    }
-  }, false);
-});
+//   window.addEventListener("load", (e) => {
+//     if(window.gsap && window.ScrollTrigger) {
+//       console.log("window loaded")
+//       gsap.registerPlugin(ScrollTrigger);
+//       const site_header = document.querySelector("#custom-header");
+//       const show_hide_header = grap.from("#custom-header", {
+//         opacity: 0,
+//       });
+//       show_hide_header();
+//       ScrollTrigger.create({
+//         start: "top top",
+//         onUpdate: (self) => {
+//           if (self.direction === -1) show_hide_header.play();
+//           else show_hide_header.reverse();
+//         },
+//       });
+//       // clearInterval(chck_if_gsap_loaded);
+//     }
+//   }, false);
+// });
