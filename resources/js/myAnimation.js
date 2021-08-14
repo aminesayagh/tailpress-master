@@ -38,6 +38,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if(window.gsap && window.ScrollTrigger) {
       console.log("window loaded")
       gsap.registerPlugin(ScrollTrigger);
+      const site_header = document.querySelector("#custom-header");
+      const show_hide_header = grap.from(site_header, {
+        yPercent: -100,
+        duration: 0.25,
+        ease: "sine.out",
+      });
+      ScrollTrigger.create({
+        start: "top top",
+        onUpdate: (self) => {
+          if (self.direction === -1) show_hide_header.play();
+          else show_hide_header.reverse();
+        },
+      });
+      clearInterval(chck_if_gsap_loaded);
     }
   }, false);
 });
