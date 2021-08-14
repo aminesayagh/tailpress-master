@@ -7,7 +7,7 @@
       
       // register scrolTrigger
       gsap.registerPlugin( ScrollTrigger );
-      console.log(gsap)
+      console.log('MY GSAP WORKING ' + gsap)
       // ... do your thing
       show_hide_header();
 
