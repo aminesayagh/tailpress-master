@@ -15,6 +15,19 @@ body{
             @apply overflow-auto;
       }
 }
-body:not() #ob-site-header{
-      @apply fixed z-50 w-full;
+
+
+#custom-header.elementor-sticky--effects{ 
+   background-color: rgba(0,0,0,0.4)!important; 
+   backdrop-filter: saturate(180%) blur(20px);
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+#custom-header{ 
+   transition: background-color 1s ease !important;
+}
+#custom-header.elementor-sticky--effects >.elementor-container{
+   min-height: 70px;
+}
+#custom-header > .elementor-container{
+   transition: min-height 1s ease !important;
 }
