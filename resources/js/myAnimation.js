@@ -6,7 +6,6 @@ gsap.utils.toArray(".sectionElem").forEach((panel, i) => {
     start: "top top",
     pin: true,
     pinSpacing: false,
-    end= '+=600'
   });
 });
 
