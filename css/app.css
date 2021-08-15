@@ -935,7 +935,7 @@ body > .div:nth-child(3) {
 #custom-header > .elementor-container{
    transition: min-height 1s ease !important;
 }
-body > div[data-elementor-type="wp-page"]:nth-child(3){
+body > div[data-elementor-type="wp-page"]{
             margin-top: -85px !important;
       }
 @media (min-width: 768px) {
