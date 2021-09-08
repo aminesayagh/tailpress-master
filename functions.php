@@ -184,13 +184,89 @@ function register_manga() {
 
 }
 
-function get_manga_from_api(){
+ass_action('wp_ajax_nopriv_get_manga_from_api', 'get_manga_from_api');
+ass_action('wp_ajax_get_manga_from_api', 'get_manga_from_api');
+
+function upload_image($url, $post_id) {
+    $image = "";
+    if($url != "") {
+     
+        $file = array();
+        $file['name'] = $url;
+        $file['tmp_name'] = download_url($url);
+ 
+        if (is_wp_error($file['tmp_name'])) {
+            @unlink($file['tmp_name']);
+            var_dump( $file['tmp_name']->get_error_messages( ) );
+        } else {
+            $attachmentId = media_handle_sideload($file, $post_id);
+             
+            if ( is_wp_error($attachmentId) ) {
+                @unlink($file['tmp_name']);
+                var_dump( $attachmentId->get_error_messages( ) );
+            } else {                
+                $image = wp_get_attachment_url( $attachmentId );
+            }
+        }
+    }
+    return $image;
+}
+
+
+function get_manga_from_api() {
+
+	$file = get_stylesheet_directory() . '/report.txt';
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] : 1;
 	$breweries = [];
 
-	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' . $current_page . '&limit=20' ));
-
+	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/Attack%20on%20Titan?page=' . $current_page . '&limit=20' ));
+	file_put_content($file, 'Current Page: '. $current_page. '\n\n', FILE_APPEND);
+	
 	$results = json_decode($results);
+
+	if( ! is_array( $results ) || empty( $results ) ){
+		return false;
+	}
+
+	$scans[] = $results;
+
+	foreach( $scans[0] as $scan ){
+		 
+		$scan_slug = sanitize_title($scan->name);
+
+		$scan_content = '<section class="container-images">';
+		$i = 0;
+		foreach( $scan->content as $img){
+			$img_updated = upload_image($img, $scan_slug);
+			$scan_content = $scan_content . '<img src="'. $img_updated . ' class="contain-image" alt="' . $scan_slug . '-' . $i . '">';
+			$i++;
+		}
+
+		$inserted_scan = wp_insert_post([
+			'post_name' => $scan_slug,
+			'post_title' => $scan_slug,
+			'post_type' => 'scan',
+			'post_status' => 'publish',
+			'post_content' => $scan_content
+		]);
+
+		if( is_wp_error($inserted_scan) ) {
+			continue;
+		}
+
+		// foreach( $fillable as $key => $name) {
+		// 	update_field( $key , $scan->$name, $inserted_scan);
+		// }
+	}
+
+	$current_page = $current_page + 1;
+	wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
+		'blocking' => false,
+		'sslverify' => false,
+		'body' => [
+			'current_page' => $current_page, 
+		]
+	] );
 
 	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' '&limit=20'
 }
