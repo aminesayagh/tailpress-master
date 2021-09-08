@@ -180,8 +180,8 @@ add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
 
 
-ass_action('wp_ajax_nopriv_get_manga_from_api', 'get_manga_from_api');
-ass_action('wp_ajax_get_manga_from_api', 'get_manga_from_api');
+// ass_action('wp_ajax_nopriv_get_manga_from_api', 'get_manga_from_api');
+// ass_action('wp_ajax_get_manga_from_api', 'get_manga_from_api');
 
 function upload_image($url, $post_id) {
     $image = "";
