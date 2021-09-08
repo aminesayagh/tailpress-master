@@ -258,13 +258,10 @@ function get_manga_from_api() {
 	}
 
 	// $current_page = $current_page + 1;
-	wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
-		'blocking' => false,
-		'sslverify' => false,
-		'body' => [
-			'current_page' => $current_page, 
-		]
-	] );
+	// wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
+	// 	'blocking' => false,
+	// 	'sslverify' => false
+	// ] );
 
 	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' '&limit=20'
 }
