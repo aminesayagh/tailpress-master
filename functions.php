@@ -226,36 +226,37 @@ function get_manga_from_api() {
 
 	$scans[] = $results;
 
-	foreach( $scans[0] as $scan ){
+	alert($scans[]);
+	// foreach( $scans[0] as $scan ){
 		 
-		$scan_slug = sanitize_title($scan->name);
+	// 	$scan_slug = sanitize_title($scan->name);
 
-		$scan_content = '<section class="container-images">';
-		$i = 0;
-		foreach( $scan->content as $img){
-			$img_updated = upload_image($img, $scan_slug);
-			$scan_content = $scan_content . '<img src="'. $img_updated . ' class="contain-image" alt="' . $scan_slug . '-' . $i . '">';
-			$i++;
-		}
+	// 	$scan_content = '<section class="container-images">';
+	// 	$i = 0;
+	// 	foreach( $scan->content as $img){
+	// 		$img_updated = upload_image($img, $scan_slug);
+	// 		$scan_content = $scan_content . '<img src="'. $img_updated . ' class="contain-image" alt="' . $scan_slug . '-' . $i . '">';
+	// 		$i++;
+	// 	}
 
-		$scan_content = $scan_content . '</section>';
+	// 	$scan_content = $scan_content . '</section>';
 
-		$inserted_scan = wp_insert_post([
-			'post_name' => $scan_slug,
-			'post_title' => $scan_slug,
-			'post_type' => 'scan',
-			'post_status' => 'publish',
-			'post_content' => $scan_content
-		]);
+	// 	$inserted_scan = wp_insert_post([
+	// 		'post_name' => $scan_slug,
+	// 		'post_title' => $scan_slug,
+	// 		'post_type' => 'scan',
+	// 		'post_status' => 'publish',
+	// 		'post_content' => $scan_content
+	// 	]);
 
-		if( is_wp_error($inserted_scan) ) {
-			continue;
-		}
+	// 	if( is_wp_error($inserted_scan) ) {
+	// 		continue;
+	// 	}
 
-		// foreach( $fillable as $key => $name) {
-		// 	update_field( $key , $scan->$name, $inserted_scan);
-		// }
-	}
+	// 	// foreach( $fillable as $key => $name) {
+	// 	// 	update_field( $key , $scan->$name, $inserted_scan);
+	// 	// }
+	// }
 
 	// $current_page = $current_page + 1;
 	// wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
