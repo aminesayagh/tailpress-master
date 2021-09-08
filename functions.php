@@ -188,7 +188,9 @@ function get_manga_from_api(){
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] : 1;
 	$breweries = [];
 
-	$results = wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' . $current_page . '&limit=20');
+	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' . $current_page . '&limit=20' ));
+
+	$results = json_decode($results);
 
 	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' '&limit=20'
 }
