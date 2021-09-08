@@ -178,11 +178,7 @@ add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
  // MANGA IMPORT DATA
 
-add_action('init', 'register_manga');
 
-function register_manga() {
-
-}
 
 ass_action('wp_ajax_nopriv_get_manga_from_api', 'get_manga_from_api');
 ass_action('wp_ajax_get_manga_from_api', 'get_manga_from_api');
@@ -215,12 +211,12 @@ function upload_image($url, $post_id) {
 
 function get_manga_from_api() {
 
-	$file = get_stylesheet_directory() . '/report.txt';
+	// $file = get_stylesheet_directory() . '/report.txt';
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] : 1;
-	$breweries = [];
+	$scans = [];
 
-	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/Attack%20on%20Titan?page=' . $current_page . '&limit=20' ));
-	file_put_content($file, 'Current Page: '. $current_page. '\n\n', FILE_APPEND);
+	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/Attack%20on%20Titan?page=1&limit=20' ));
+	// file_put_content($file, 'Current Page: '. $current_page. '\n\n', FILE_APPEND);
 	
 	$results = json_decode($results);
 
@@ -242,6 +238,8 @@ function get_manga_from_api() {
 			$i++;
 		}
 
+		$scan_content = $scan_content . '</section>';
+
 		$inserted_scan = wp_insert_post([
 			'post_name' => $scan_slug,
 			'post_title' => $scan_slug,
@@ -259,7 +257,7 @@ function get_manga_from_api() {
 		// }
 	}
 
-	$current_page = $current_page + 1;
+	// $current_page = $current_page + 1;
 	wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
 		'blocking' => false,
 		'sslverify' => false,
