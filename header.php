@@ -15,6 +15,15 @@
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
+<?php
+$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=1&limit=20'));
+
+echo '<pre>';
+print_r($results);
+echo '</pre>';
+die();
+
+?>
 <div id="page">
 
 	<?php do_action( 'tailpress_header' ); ?>

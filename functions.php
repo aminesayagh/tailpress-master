@@ -175,3 +175,20 @@ function wpc_elementor_shortcode() {
 };
 
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
+
+ // MANGA IMPORT DATA
+
+add_action('init', 'register_manga');
+
+function register_manga() {
+
+}
+
+function get_manga_from_api(){
+	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] : 1;
+	$breweries = [];
+
+	$results = wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' . $current_page . '&limit=20');
+
+	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' '&limit=20'
+}
