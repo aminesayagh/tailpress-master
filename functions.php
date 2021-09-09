@@ -178,12 +178,12 @@ add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
  // MANGA IMPORT DATA
 
-function upload_image($url) {
+function upload_image($url, $name) {
 	include_once( ABSPATH . 'wp-admin/includes/image.php' );
 	$imageurl = $url;
 	$imagetype = end(explode('/', getimagesize($imageurl)['mime']));
-	$uniq_name = date('dmY').''.(int) microtime(true); 
-	$filename = $uniq_name.'.'.$imagetype;
+	// $uniq_name = date('dmY').''.(int) microtime(true); 
+	$filename = $name.'.'.$imagetype;
 
 	$uploaddir = wp_upload_dir();
 	$uploadfile = $uploaddir['path'] . '/' . $filename;
@@ -242,7 +242,7 @@ function get_scans_from_api(){
 		$content_scan = '<section class="container-scan">';
 		$i = 1;
 		foreach($scan->content as $img) {
-			$new_img = upload_image($img);
+			$new_img = upload_image($img, $scan_slug.'-'.$i);
 			$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
 			$i++;
 		}
