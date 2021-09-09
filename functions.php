@@ -239,14 +239,14 @@ function get_scans_from_api(){
 	$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
 
 	if( $exisiting_scan === null ){
-		$content_scan = '<section class="container-scan">';
-		$i = 1;
-		foreach($scan->content as $img) {
-			$new_img = upload_image($img, $scan_slug.'-'.$i);
-			$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
-			$i++;
-		}
-		$content_scan = $content_scan . '</section>';
+		// $content_scan = '<section class="container-scan">';
+		// $i = 1;
+		// foreach($scan->content as $img) {
+		// 	$new_img = upload_image($img, $scan_slug.'-'.$i);
+		// 	$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+		// 	$i++;
+		// }
+		// $content_scan = $content_scan . '</section>';
 		$inserted_scan = wp_insert_post([
 			'post_name' => $scan_slug,
 			'post_title' => $scan->name,
