@@ -178,29 +178,35 @@ add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
  // MANGA IMPORT DATA
 
-function upload_image($url, $post_id) {
-    $image = "";
-    if($url != "") {
-     
-        $file = array();
-        $file['name'] = $url;
-        $file['tmp_name'] = download_url($url);
- 
-        if (is_wp_error($file['tmp_name'])) {
-            @unlink($file['tmp_name']);
-            var_dump( $file['tmp_name']->get_error_messages( ) );
-        } else {
-            $attachmentId = media_handle_sideload($file, $post_id);
-             
-            if ( is_wp_error($attachmentId) ) {
-                @unlink($file['tmp_name']);
-                var_dump( $attachmentId->get_error_messages( ) );
-            } else {                
-                $image = wp_get_attachment_url( $attachmentId );
-            }
-        }
-    }
-    return $image;
+function upload_image($url) {
+	include_once( ABSPATH . 'wp-admin/includes/image.php' );
+	$imageurl = $url;
+	$imagetype = end(explode('/', getimagesize($imageurl)['mime']));
+	$uniq_name = date('dmY').''.(int) microtime(true); 
+	$filename = $uniq_name.'.'.$imagetype;
+
+	$uploaddir = wp_upload_dir();
+	$uploadfile = $uploaddir['path'] . '/' . $filename;
+	$contents= file_get_contents($imageurl);
+	$savefile = fopen($uploadfile, 'w');
+	fwrite($savefile, $contents);
+	fclose($savefile);
+
+	$wp_filetype = wp_check_filetype(basename($filename), null );
+	$attachment = array(
+	'post_mime_type' => $wp_filetype['type'],
+	'post_title' => $filename,
+	'post_content' => '',
+	'post_status' => 'inherit'
+	);
+
+	$attach_id = wp_insert_attachment( $attachment, $uploadfile );
+	$imagenew = get_post( $attach_id );
+	$fullsizepath = get_attached_file( $imagenew->ID );
+	$attach_data = wp_generate_attachment_metadata( $attach_id, $fullsizepath );
+	wp_update_attachment_metadata( $attach_id, $attach_data );
+
+	return $uploadfile;
 }
 
 add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
@@ -223,7 +229,7 @@ function publish_new_post($scan_slug, $scan){
 			$i = 0;
 			
 			foreach( $scan->content as $img ){
-				$url_img = upload_image($img, $inserted_scan);
+				$url_img = upload_image($img);
 				$content_scan = $content_scan . '<img src="' . $url_img . '" alt="' .$scan_slug. '-' . $i . '">';
 				$i++;
 			}
