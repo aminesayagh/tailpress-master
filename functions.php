@@ -290,6 +290,7 @@ function post_local_img_in_post(){
 
 	wp_update_post([
 		'ID' => $id_post,
+		'status' => 'publish',
 		'post_content' => $content_scan,
 	]);
 	
