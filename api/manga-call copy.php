@@ -31,19 +31,18 @@ function upload_image($url, $name) {
 	return $uploadfile;
 }
 
-if( ! wp_next_scheduled('update_scan_list')) {
-      wp_schedule_event(time(), 'weekly', 'get_scans_from_api');
-}
-
 add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
 add_action('wp_ajax_get_scans_from_api', 'get_scans_from_api');
+
+add_action('wp_ajax_nopriv_post_local_img_in_post', 'post_local_img_in_post');
+add_action('wp_ajax_post_local_img_in_post', 'post_local_img_in_post');
 
 function get_scans_from_api(){
 
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
 	$scans = [];
 	
-	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=20'));
+	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=1'));
 
 	$results = json_decode($results);
 
@@ -51,38 +50,69 @@ function get_scans_from_api(){
 		return false;
 	}
 
-	$scans = $results[0];
+	$scan = $results[0];
 	
-      foreach($scans as $scan){
-            $scan_slug = sanitize_title( $scan->name );
-      
-            $exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
-            
-            if( $exisiting_scan === null ){
-                  $content_scan = '<section class="container-scan">';
-                  $i = 1;
-                  foreach($scan->content as $img) {
-                        $new_img = upload_image($img, $scan_slug.'-'.$i);
-                        $content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
-                        $i++;
-                  }
-                  $content_scan = $content_scan . '</section>';
-                  $inserted_scan = wp_insert_post([
-                        'post_name' => $scan_slug,
-                        'post_title' => $scan->name,
-                        'post_type' => 'scan',
-                        'post_status' => 'publish',
-                        'post_category' => $scan->category,
-                        'post_content' => $content_scan
-                  ]);
-      
-                  if( is_wp_error( $inserted_scan )) {
-                        return;
-                  }
-      
-            }
-      }
-      
+
+	$scan_slug = sanitize_title( $scan->name );
+
+	$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
+
+	if( $exisiting_scan === null ){
+		// $content_scan = '<section class="container-scan">';
+		// $i = 1;
+		// foreach($scan->content as $img) {
+		// 	$new_img = upload_image($img, $scan_slug.'-'.$i);
+		// 	$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+		// 	$i++;
+		// }
+		// $content_scan = $content_scan . '</section>';
+		$inserted_scan = wp_insert_post([
+			'post_name' => $scan_slug,
+			'post_title' => $scan->name,
+			'post_type' => 'scan',
+			'post_status' => 'draft',
+			'post_category' => $scan->category,
+		]);
+
+		if( is_wp_error( $inserted_scan )) {
+			return;
+		}
+
+		wp_remote_post( admin_url('admin-ajax.php?action=post_local_img_in_post'), [
+			'blocking' => false,
+			'sskverify' => false,
+			'body' => [
+				'current_page' => $current_page,
+				'inserted_scan' => $inserted_scan,
+				'scan_content' => $scan->content
+			]
+		]);
+	}
+
+}
+
+function post_local_img_in_post(){
+	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
+	
+	$id_post = $_POST['inserted_scan'];
+
+	$list_img = $_POST['scan_content'];
+
+	$content_scan = '<section class="container-scan">';
+	$i = 1;
+	foreach($list_img as $img) {
+            $new_img = upload_image($img);
+            $content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+            $i++;
+	}
+	$content_scan = $content_scan . '</section>';
+
+	wp_update_post([
+		'ID' => $id_post,
+		'status' => 'publish',
+		'post_content' => $content_scan,
+	]);
+	
 	if($current_page > 20 ){
 		return;
 	}
@@ -94,9 +124,7 @@ function get_scans_from_api(){
 			'current_page' => $current_page
 		]
 	] );
-
 }
-
 
 // add_action('save_post', 'save_post_callback', 10 , 3);
 
