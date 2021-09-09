@@ -8,7 +8,7 @@
 			the_post();
 			?>
 
-			<?php my_button_counter( 'template-parts/content', get_post_format() ); ?>
+			<!-- <?php my_button_counter( 'template-parts/content', get_post_format() ); ?> -->
 
 		<?php endwhile; ?>
 

@@ -178,11 +178,6 @@ add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
 
  // MANGA IMPORT DATA
 
-
-
-// ass_action('wp_ajax_nopriv_get_manga_from_api', 'get_manga_from_api');
-// ass_action('wp_ajax_get_manga_from_api', 'get_manga_from_api');
-
 function upload_image($url, $post_id) {
     $image = "";
     if($url != "") {
@@ -208,61 +203,84 @@ function upload_image($url, $post_id) {
     return $image;
 }
 
+add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
+add_action('wp_ajax_get_scans_from_api', 'get_scans_from_api');
 
-function get_manga_from_api() {
+function publish_new_post($scan_slug, $scan){
+	$inserted_scan = wp_insert_post([
+				'post_name' => $scan_slug,
+				'post_title' => $scan->name,
+				'post_type' => 'scan',
+				'post_status' => 'draft',
+				'post_category' => $scan->category,
+			]);
+	
+			if( is_wp_error( $inserted_scan )) {
+				return;
+			}
+			
+			$content_scan = '<section class="container-scan-content">';
+			$i = 0;
+			
+			foreach( $scan->content as $img ){
+				$url_img = upload_image($img, $inserted_scan);
+				$content_scan = $content_scan . '<img src="' . $url_img . '" alt="' .$scan_slug. '-' . $i . '">';
+				$i++;
+			}
+			
+			$content_scan = $content_scan . '</section>';
+	
+			wp_update_post([
+				'ID' => $inserted_scan,
+				'post_content' => $content_scan,
+				'post_status' => 'publish'
+			]);
+}
+
+function get_scans_from_api(){
+	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=1&limit=20'
 
 	// $file = get_stylesheet_directory() . '/report.txt';
-	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] : 1;
+	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
 	$scans = [];
-
-	$results = wp_remote_retrieve_body( wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/Attack%20on%20Titan?page=1&limit=20' ));
-	// file_put_content($file, 'Current Page: '. $current_page. '\n\n', FILE_APPEND);
 	
+	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=20'));
+	// file_put_contents($file, "Current Page n: " . $current_page . "\n\n", FILE_APPEND);
+
 	$results = json_decode($results);
 
-	if( ! is_array( $results ) || empty( $results ) ){
+	if( ! is_array($results) || empty( $results )){
 		return false;
 	}
 
 	$scans[] = $results;
+	
+	foreach( $scans[0] as $scan ) {
 
-	alert($scans[]);
-	// foreach( $scans[0] as $scan ){
-		 
-	// 	$scan_slug = sanitize_title($scan->name);
+		$scan_slug = sanitize_title( $scan->name );
 
-	// 	$scan_content = '<section class="container-images">';
-	// 	$i = 0;
-	// 	foreach( $scan->content as $img){
-	// 		$img_updated = upload_image($img, $scan_slug);
-	// 		$scan_content = $scan_content . '<img src="'. $img_updated . ' class="contain-image" alt="' . $scan_slug . '-' . $i . '">';
-	// 		$i++;
-	// 	}
+		$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
 
-	// 	$scan_content = $scan_content . '</section>';
+		if( $exisiting_scan === null ){
+			publish_new_post($scan_slug, $scan);
+			
+		} else {
+			if($exisiting_scan->post_status === 'draft') {
+				wp_delete_post($exisiting_scan->ID);
+				publish_new_post($scan_slug, $scan);
+			}
+		}
+		
+	}
 
-	// 	$inserted_scan = wp_insert_post([
-	// 		'post_name' => $scan_slug,
-	// 		'post_title' => $scan_slug,
-	// 		'post_type' => 'scan',
-	// 		'post_status' => 'publish',
-	// 		'post_content' => $scan_content
-	// 	]);
+	$current_page = $current_page + 1;
 
-	// 	if( is_wp_error($inserted_scan) ) {
-	// 		continue;
-	// 	}
+	wp_remote_post( admin_url('admin-ajax.php?action=get_scans_from_api'), [
+		'blocking' => false,
+		'sskverify' => false,
+		'body' => [
+			'current_page' => $current_page
+		]
+	] );
 
-	// 	// foreach( $fillable as $key => $name) {
-	// 	// 	update_field( $key , $scan->$name, $inserted_scan);
-	// 	// }
-	// }
-
-	// $current_page = $current_page + 1;
-	// wp_remote_post( admin_url('admin-ajax.php?action=get_manga_from_api'), [
-	// 	'blocking' => false,
-	// 	'sslverify' => false
-	// ] );
-
-	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=' '&limit=20'
 }
