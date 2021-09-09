@@ -194,10 +194,10 @@ function upload_image($url) {
 
 	$wp_filetype = wp_check_filetype(basename($filename), null );
 	$attachment = array(
-	'post_mime_type' => $wp_filetype['type'],
-	'post_title' => $filename,
-	'post_content' => '',
-	'post_status' => 'inherit'
+		'post_mime_type' => $wp_filetype['type'],
+		'post_title' => $filename,
+		'post_content' => '',
+		'post_status' => 'inherit'
 	);
 
 	$attach_id = wp_insert_attachment( $attachment, $uploadfile );
@@ -212,32 +212,6 @@ function upload_image($url) {
 add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
 add_action('wp_ajax_get_scans_from_api', 'get_scans_from_api');
 
-function publish_new_post($scan_slug, $scan){
-	
-	$content_scan = '<section class="container-scan-content">';
-	$i = 1;
-	
-	foreach( $scan->content as $img ){
-		$content_scan = $content_scan . '<img src="' . $img . '" alt="' .$scan_slug. '-' . $i . '">';
-		$i++;
-	}
-	
-	$content_scan = $content_scan . '</section>';
-	
-	$inserted_scan = wp_insert_post([
-		'post_name' => $scan_slug,
-		'post_title' => $scan->name,
-		'post_type' => 'scan',
-		'post_status' => 'publish',
-		'post_category' => $scan->category,
-		'post_content' => $content_scan,
-	]);
-	
-	if( is_wp_error( $inserted_scan )) {
-		return;
-	}
-}
-
 function get_scans_from_api(){
 	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=1&limit=20'
 
@@ -245,7 +219,7 @@ function get_scans_from_api(){
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
 	$scans = [];
 	
-	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=50'));
+	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=1'));
 	// file_put_contents($file, "Current Page n: " . $current_page . "\n\n", FILE_APPEND);
 
 	$results = json_decode($results);
@@ -254,24 +228,34 @@ function get_scans_from_api(){
 		return false;
 	}
 
-	$scans[] = $results;
+	$scan = $results[0];
 	
-	foreach( $scans[0] as $scan ) {
 
-		$scan_slug = sanitize_title( $scan->name );
+	$scan_slug = sanitize_title( $scan->name );
 
-		$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
+	$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
 
-		if( $exisiting_scan === null ){
-			publish_new_post($scan_slug, $scan);
-			
-		} else {
-			if($exisiting_scan->post_status === 'draft') {
-				wp_delete_post($exisiting_scan->ID);
-				publish_new_post($scan_slug, $scan);
-			}
+	if( $exisiting_scan === null ){
+		$content = '<section class="container-scan">';
+		$i = 1;
+		foreach($scan->content as $img) {
+			$new_img = upload_image($img);
+			$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+			$i++;
 		}
-		
+		$content_scan = $content_scan . '</section>';
+		$inserted_scan = wp_insert_post([
+			'post_name' => $scan_slug,
+			'post_title' => $scan->name,
+			'post_type' => 'scan',
+			'post_status' => 'publish',
+			'post_category' => $scan->category,
+			'post_content' => $content_scan,
+		]);
+
+		if( is_wp_error( $inserted_scan )) {
+			return;
+		}
 	}
 
 	$current_page = $current_page + 1;
@@ -283,5 +267,43 @@ function get_scans_from_api(){
 			'current_page' => $current_page
 		]
 	] );
-
 }
+
+// add_action('save_post', 'save_post_callback', 10 , 3);
+
+// function save_post_callback($post_id, $post, $update ) {
+// 	if( $update ) {
+// 		return;
+// 	}
+// 	if( wp_is_post_revision( $post_id )){
+// 		return;
+// 	}
+
+// 	if( defined( 'DOING_AUTOSAVE' ) and DOING_AUTOSAVE ) {
+// 		return;
+// 	}
+// 	if( $post->post_type != 'scan'){
+// 		return;
+// 	}
+	
+// 	$list_img = $post->post_content;
+// 	$list_img = expoled(" - ", $list_img);
+// 	$content_scan = '<section class="container-scan">';
+// 	$i = 1;
+// 	foreach($list_img as $img) {
+// 		$new_img = upload_image($img);
+// 		$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+// 		$i++;
+// 	}
+	
+// 	$content_scan = $content_scan . '</section>';
+	
+	
+// 	wp_update_post([
+// 		'ID' => $post_ID,
+// 		'post_content' => $content_scan,
+// 		'post_status' => 'publish',
+// 	]);
+	
+// 	echo 'coco';
+// }
