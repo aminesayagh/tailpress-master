@@ -213,34 +213,29 @@ add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
 add_action('wp_ajax_get_scans_from_api', 'get_scans_from_api');
 
 function publish_new_post($scan_slug, $scan){
+	
+	$content_scan = '<section class="container-scan-content">';
+	$i = 1;
+	
+	foreach( $scan->content as $img ){
+		$content_scan = $content_scan . '<img src="' . $img . '" alt="' .$scan_slug. '-' . $i . '">';
+		$i++;
+	}
+	
+	$content_scan = $content_scan . '</section>';
+	
 	$inserted_scan = wp_insert_post([
-				'post_name' => $scan_slug,
-				'post_title' => $scan->name,
-				'post_type' => 'scan',
-				'post_status' => 'draft',
-				'post_category' => $scan->category,
-			]);
+		'post_name' => $scan_slug,
+		'post_title' => $scan->name,
+		'post_type' => 'scan',
+		'post_status' => 'publish',
+		'post_category' => $scan->category,
+		'post_content' => $content_scan,
+	]);
 	
-			if( is_wp_error( $inserted_scan )) {
-				return;
-			}
-			
-			$content_scan = '<section class="container-scan-content">';
-			$i = 0;
-			
-			foreach( $scan->content as $img ){
-				$url_img = upload_image($img);
-				$content_scan = $content_scan . '<img src="' . $url_img . '" alt="' .$scan_slug. '-' . $i . '">';
-				$i++;
-			}
-			
-			$content_scan = $content_scan . '</section>';
-	
-			wp_update_post([
-				'ID' => $inserted_scan,
-				'post_content' => $content_scan,
-				'post_status' => 'publish'
-			]);
+	if( is_wp_error( $inserted_scan )) {
+		return;
+	}
 }
 
 function get_scans_from_api(){
