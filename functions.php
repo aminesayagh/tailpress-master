@@ -212,6 +212,9 @@ function upload_image($url) {
 add_action('wp_ajax_nopriv_get_scans_from_api', 'get_scans_from_api');
 add_action('wp_ajax_get_scans_from_api', 'get_scans_from_api');
 
+add_action('wp_ajax_nopriv_post_local_img_in_post', 'post_local_img_in_post');
+add_action('wp_ajax_post_local_img_in_post', 'post_local_img_in_post');
+
 function get_scans_from_api(){
 	// 'https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page=1&limit=20'
 
@@ -236,7 +239,7 @@ function get_scans_from_api(){
 	$exisiting_scan = get_page_by_path($scan_slug, 'OBJECT', 'scan');
 
 	if( $exisiting_scan === null ){
-		$content = '<section class="container-scan">';
+		$content_scan = '<section class="container-scan">';
 		$i = 1;
 		foreach($scan->content as $img) {
 			$new_img = upload_image($img);
@@ -248,20 +251,52 @@ function get_scans_from_api(){
 			'post_name' => $scan_slug,
 			'post_title' => $scan->name,
 			'post_type' => 'scan',
-			'post_status' => 'publish',
+			'post_status' => 'draft',
 			'post_category' => $scan->category,
-			'post_content' => $content_scan,
 		]);
 
 		if( is_wp_error( $inserted_scan )) {
 			return;
 		}
+
+		wp_remote_post( admin_url('admin-ajax.php?action=post_local_img_in_post'), [
+			'blocking' => false,
+			'sskverify' => false,
+			'body' => [
+				'current_page' => $current_page,
+				'inserted_scan' => $inserted_scan,
+				'scan_content' => $scan->content
+			]
+		]);
 	}
 
-	$current_page = $current_page + 1;
+}
+
+function post_local_img_in_post(){
+	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
+	
+	$id_post = $_POST['inserted_scan'];
+
+	$list_img = $_POST['scan_content'];
+
+	$content_scan = '<section class="container-scan">';
+		$i = 1;
+		foreach($list_img as $img) {
+			$new_img = upload_image($img);
+			$content_scan = $content_scan . '<img class="img-scan" src="' . $new_img . '" alt="' . $post->post_name . '-' . $i .'"';
+			$i++;
+		}
+	$content_scan = $content_scan . '</section>';
+
+	wp_update_post([
+		'ID' => $id_post,
+		'post_content' => $content_scan,
+	]);
+	
 	if($current_page > 20 ){
 		return;
 	}
+	$current_page = $current_page + 1;
 	wp_remote_post( admin_url('admin-ajax.php?action=get_scans_from_api'), [
 		'blocking' => false,
 		'sskverify' => false,
