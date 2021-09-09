@@ -259,7 +259,9 @@ function get_scans_from_api(){
 	}
 
 	$current_page = $current_page + 1;
-
+	if($current_page > 20 ){
+		return;
+	}
 	wp_remote_post( admin_url('admin-ajax.php?action=get_scans_from_api'), [
 		'blocking' => false,
 		'sskverify' => false,
