@@ -250,7 +250,7 @@ function get_scans_from_api(){
 	$current_page = ( ! empty($_POST['current_page']) ) ? $_POST['current_page'] :  1;
 	$scans = [];
 	
-	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=1'));
+	$results = wp_remote_retrieve_body(wp_remote_get('https://shinobyboy-crudapi.herokuapp.com/api/scan/all?page='. $current_page .'&limit=20'));
 	// file_put_contents($file, "Current Page n: " . $current_page . "\n\n", FILE_APPEND);
 
 	$results = json_decode($results);
