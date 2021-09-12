@@ -175,8 +175,3 @@ function wpc_elementor_shortcode() {
 };
 
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode' );
-
- // MANGA IMPORT DATA
-
-get_template_part('api/manga-call', 'api_manga');
-
