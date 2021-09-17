@@ -1,6 +1,7 @@
 <div>
       <p>test</p>
       <?php
-            $date = get_field('')
+            $data = get_field('data_manga');
+            echo $data;
       ?>
 </div>
