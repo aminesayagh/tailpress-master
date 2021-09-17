@@ -177,7 +177,7 @@ function wpc_elementor_shortcode_button_love() {
 add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode_button_love' );
 
 function wpc_elementor_shortcode_groupe_data_of_manga() {
-	get_template_part( 'template-parts/goupe_data_of_manga', 'groupe_data_of_manga');
+	get_template_part( 'template-parts/my_groupe_data_of_manga', 'my_groupe_data_of_manga');
 };
 
 add_shortcode( 'my_groupe_data_of_manga', 'wpc_elementor_shortcode_groupe_data_of_manga');
