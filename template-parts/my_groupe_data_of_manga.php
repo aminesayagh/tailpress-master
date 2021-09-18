@@ -5,8 +5,8 @@
                   $content = "";
                   foreach($data as $key => $value){
                         if(is_array($value)){
+                              $content = $content . "<div class='container_data data_". $key."'><h4 class='title_data'>" . $key . "</h4><ul>";
                               if( have_rows($value)) :
-                                    $content = $content . "<div class='container_data data_". $key."'><h4 class='title_data'>" . $key . "</h4><ul>";
                                     while(have_rows($value)) : the_row();
                                           $sub_value = get_sub_field('sub_field');
                                           $content = $content . "<li>". $sub_value . "</li>";
@@ -20,6 +20,7 @@
                         }
                   }
                   echo $content;
+                  echo $data;
             ?>
       <?php endif; ?>
 </div>
