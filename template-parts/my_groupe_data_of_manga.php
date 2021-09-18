@@ -10,7 +10,7 @@
                               echo '<ul class="data_repeater">';
                               foreach($value as $key => $sub_value){
                                     echo '<li>';
-                                    echo $sub_value[$key];
+                                    echo $sub_value['synonym'];
                                     echo '</li>';
                               }
                               echo '</ul>';
