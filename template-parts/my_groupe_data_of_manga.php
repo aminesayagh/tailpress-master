@@ -12,7 +12,7 @@
                               echo '<ul class="data_repeater">';
                               foreach($value as $sub_key => $sub_value){
                                     echo '<li>';
-                                    echo $value[$sub_key];
+                                    echo $sub_value;
                                     echo '</li>';
                               }
                               echo '</ul>';
