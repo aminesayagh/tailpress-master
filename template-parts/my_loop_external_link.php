@@ -4,7 +4,7 @@
             echo '<section>';
             foreach( $data as $value){
                   echo '<div class="link">';
-                  echo '<a href='. $value['link'] .'>'. $value['text'] .'</a>';
+                  echo '<a href='. $value['link'] .'><div>'. $value['text'] .'</div></a>';
                   echo '</div>';
             }
             echo '</section>';
