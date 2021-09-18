@@ -9,7 +9,7 @@
                         if(is_array($value)){
                               echo '<ul class="data_repeater">';
                               foreach($value as $key => $sub_value){
-                                    echo '<li>';
+                                    echo '<li class="responce_data">';
                                     echo $sub_value['synonym'];
                                     echo '</li>';
                               }
