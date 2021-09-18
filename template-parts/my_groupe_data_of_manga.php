@@ -8,7 +8,7 @@
                               $content = $content . "<div class='container_data data_". $key."'><h4 class='title_data'>" . $key . "</h4><ul>";
                               if( have_rows($value)) :
                                     while(have_rows($value)) : the_row();
-                                          $sub_value = get_sub_field('sub_field');
+                                          $sub_value = get_sub_field('synonym');
                                           $content = $content . "<li>". $sub_value . "</li>";
                                           
                                     endwhile;
@@ -20,7 +20,6 @@
                         }
                   }
                   echo $content;
-                  echo $data;
             ?>
       <?php endif; ?>
 </div>
