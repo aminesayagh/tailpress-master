@@ -1,5 +1,3 @@
-
-
 <?php
       $data = get_field('data_manga');
       if( $data ) {
@@ -12,7 +10,6 @@
                               echo '<ul class="data_repeater">';
                               foreach($value as $key => $sub_value){
                                     echo '<li>';
-                                    echo $key;
                                     echo $sub_value['synonym'];
                                     echo '</li>';
                               }
