@@ -194,7 +194,7 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 	if( $data_manga ){
 		$post_eng_title = $data_manga['english'];
 	} else {
-		$post_eng_title = ''
+		$post_eng_title = '';
 	}
 	if($post_title || $post_eng_title){
 		$query->set('category_name', [$post_title, $post_eng_title]);
