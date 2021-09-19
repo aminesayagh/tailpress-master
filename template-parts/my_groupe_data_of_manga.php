@@ -4,7 +4,7 @@
             echo '<section class="data_manga_section">';
             foreach( $data as $key => $value) {
                   if($value !== '') {
-                        echo '<div class="container_data data"'. $key .'>';
+                        echo '<div class="container_data data_'. $key .'">';
                         echo '<h4 class="title_data">'. $key .'</h4>';
                         if(is_array($value)){
                               echo '<ul class="data_repeater">';
