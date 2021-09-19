@@ -170,20 +170,20 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
 
-// function wpc_elementor_shortcode_button_love() {
-// 	get_template_part( 'template-parts/counter-thanks', 'counter_thanks' );
-// };
+function wpc_elementor_shortcode_button_love() {
+	get_template_part( 'template-parts/counter-thanks', 'counter_thanks' );
+};
 
-// add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode_button_love' );
+add_shortcode( 'my_button_counter', 'wpc_elementor_shortcode_button_love' );
 
-// function wpc_elementor_shortcode_groupe_data_of_manga() {
-// 	get_template_part( 'template-parts/my_groupe_data_of_manga', 'my_groupe_data_of_manga');
-// };
+function wpc_elementor_shortcode_groupe_data_of_manga() {
+	get_template_part( 'template-parts/my_groupe_data_of_manga', 'my_groupe_data_of_manga');
+};
 
-// add_shortcode( 'my_groupe_data_of_manga', 'wpc_elementor_shortcode_groupe_data_of_manga');
+add_shortcode( 'my_groupe_data_of_manga', 'wpc_elementor_shortcode_groupe_data_of_manga');
 
-// function wpc_elementor_shortcode_loop_external_link() {
-// 	get_template_part('template-parts/my_loop_external_link', 'my_loop_external_link');
-// };
+function wpc_elementor_shortcode_loop_external_link() {
+	get_template_part('template-parts/my_loop_external_link', 'my_loop_external_link');
+};
 
-// add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
+add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
