@@ -182,8 +182,8 @@ function wpc_elementor_shortcode_groupe_data_of_manga() {
 
 add_shortcode( 'my_groupe_data_of_manga', 'wpc_elementor_shortcode_groupe_data_of_manga');
 
-function wpc_elementor_shortcode_loop_external_link() {
-	get_template_part('template-parts/my_loop_external_link', 'my_loop_external_link');
-};
+// function wpc_elementor_shortcode_loop_external_link() {
+// 	get_template_part('template-parts/my_loop_external_link', 'my_loop_external_link');
+// };
 
-add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
+// add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
