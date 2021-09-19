@@ -187,3 +187,4 @@ function wpc_elementor_shortcode_loop_external_link() {
 };
 
 add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
+
