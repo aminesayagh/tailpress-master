@@ -4,9 +4,9 @@
 
       $terms = get_the_terms($id_scan, 'category');
 
-      var_dump($terms);
+      var_dump($terms[0]['name']);
 
-      
+      get_field('image_manga', )
 
 
 
