@@ -11,6 +11,8 @@
             'post_title' => $terms,
       ));
 
+      var_dump($manga_relative);
+
 
 
 ?>
