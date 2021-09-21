@@ -10,12 +10,12 @@
 
       
       $cover_manga = get_field('image_manga', $relative_manga->ID );
-      var_dump($cover_manga);
+      // var_dump($cover_manga);
 
       if( ! empty($cover_manga) ){
 
             echo '<div class="cover_img">';
-            // echo '<img src="'. esc_url($cover_manga['url']) .' alt="'. esc_attr($relative_manga) .'">';
+            echo '<img src="'. esc_url($cover_manga['url']) .' alt="'. esc_attr($relative_manga) .'">';
             echo '</div>';
       }
 
