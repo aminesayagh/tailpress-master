@@ -188,6 +188,12 @@ function wpc_elementor_shortcode_loop_external_link() {
 
 add_shortcode('my_loop_external_link', 'wpc_elementor_shortcode_loop_external_link');
 
+function wpc_elementor_shortcode_feature_image_scan(){
+	get_template_part('template-parts/feature_image_scan', 'feature_image_scan');
+}
+
+add_shortcode('feature_image_scan', 'wpc_elementor_shortcode_feature_image_scan');
+
 add_action('elementor/query/query_scan_filter_by_title_manga', function( $query ) {
 	$post_title = get_the_title();
 	$data_manga = get_field('data_manga');
