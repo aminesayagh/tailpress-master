@@ -8,7 +8,7 @@
 
       
 
-      // var_dump($terms[0]->name);
+      var_dump($relative_manga);
 
       $cover_manga = get_field('image_manga', $relative_manga->ID );
 
