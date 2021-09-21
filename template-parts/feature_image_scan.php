@@ -2,15 +2,15 @@
 
       $id_scan = get_the_ID();
 
-      $terms = the_terms($id_scan, 'category');
+      $terms = get_the_terms($id_scan, 'category');
 
-      var_dump($terms);
+      var_dump($terms[0]);
 
       $manga_relative = get_posts(array(
             'post_type' => 'manga',
             'post_title' => $terms,
       ));
 
-      
+
 
 ?>
