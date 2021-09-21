@@ -4,7 +4,7 @@
 
       $terms = get_the_terms($id_scan, 'category');
 
-      $relative_manga = get_page_by_title($terms, 'OBJECT', 'manga');
+      $relative_manga = get_page_by_title($terms[0]->name, 'OBJECT', 'manga');
 
       
 
