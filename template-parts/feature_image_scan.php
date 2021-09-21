@@ -15,7 +15,7 @@
       if( ! empty($cover_manga) ){
 
             echo '<div class="cover_img">';
-            echo '<img src="'. esc_url($cover_manga['url']) .' alt="'. esc_attr($relative_manga) .'">';
+            echo '<img src="'. esc_url($cover_manga['url']) .' alt="'. esc_attr($relative_manga->name) .'-cover">';
             echo '</div>';
       }
 
