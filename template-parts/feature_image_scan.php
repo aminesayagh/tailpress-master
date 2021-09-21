@@ -1,17 +1,16 @@
 <?php
 
       $id_scan = get_the_ID();
-      $terms = get_terms( array(
-            'taxonomy' => 'category',
-            'hide_empty' => false,
-      ) );
 
-      var_dump($id_scan);
+      $terms = the_terms($id_scan, 'category');
+
+      var_dump($terms);
 
       $manga_relative = get_posts(array(
             'post_type' => 'manga',
-            'post_title' => $scan_category,
-      ))
+            'post_title' => $terms,
+      ));
 
+      
 
 ?>
