@@ -219,7 +219,7 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	// 	'meta_key' => 'raking',
 	// );
 
-	$query->set('orderby', 'meta_value');
+	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'raking');
 	$query->set('order', 'DESC');
 });
