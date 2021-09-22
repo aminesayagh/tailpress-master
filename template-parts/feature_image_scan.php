@@ -20,7 +20,4 @@
             echo '<img src="'. ($cover_manga) .'" alt="'. $title_manga .'-cover">';
             echo '</div>';
       }
-
-
-
 ?>
