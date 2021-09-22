@@ -207,14 +207,19 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 	}
 });
 
-// add_action('elementor/query/query_scan_raking', function ($query) {
-// 	$meta_query[] = [
-// 		'key' => 'raking',
-// 		'order' => 'DESC',
-// 		'ordeby' => 'meta_value',
-// 	];
+add_action('elementor/query/query_scan_raking', function ($query) {
+	// $meta_query[] = [
+	// 	'key' => 'raking',
+	// 	''
+	// ];
+	// $args = array(
+	// 	'post_type' => 'scan',
+	// 	'order' => 'DESC',
+	// 	'ordeby' => 'meta_value',
+	// 	'meta_key' => 'raking',
+	// );
 
-// 	$query->set('meta_query', $meta_query);
-
-
-// });
+	$query->set('orderby', 'meta_value');
+	$query->set('meta_key', 'raking');
+	$query->set('order', 'DESC');
+});
