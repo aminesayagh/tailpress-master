@@ -6,7 +6,7 @@
       $link_category_scan = 'https://shinobyboy.co/manga/'. $category_scan;
       
       if( $raking_scan ){
-            echo '<div class="relative">';
+            echo '<div class="relative selector_more_chapter">';
             
             echo '<div name="other_chapter" class="title_selector_more_chapter">';
             echo '<h5 class="main_title">' . get_the_title($id_scan) . '</h5>';
@@ -45,5 +45,8 @@
       }
 ?>
 <script>
-      document.querySelector('.title_selector_more_chapter');
+      let selector_element = document.querySelector('.selector_more_chapter .title_selector_more_chapter');
+      selector_element.addEventListener('click', function(){
+            document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
+      })
 </script>
