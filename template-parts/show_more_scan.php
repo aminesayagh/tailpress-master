@@ -15,11 +15,10 @@
             $args = array(
                   'post_type' => 'scan', 
                   'category_name' => $category_scan[0]->name, 
-                  'posts_per_page' => 20, 
+                  'posts_per_page' => -1, 
                   'order' => 'DESC', 
                   'orderby' => 'meta_value', 
                   'meta_key' => 'raking', 
-                  'offset' => $reking_scan > 10 ? $reking_scan - 10 : 0,
             );
             
             $my_query = new WP_Query( $args );
