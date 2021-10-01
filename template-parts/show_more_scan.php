@@ -17,9 +17,7 @@
             $my_query = new WP_Query( $args );
             
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-                  echo '<h5><a href='. the_permalink() .'>';
-                  the_title();
-                  echo '</a></h5>';
+                  echo '<h5><a href='. the_permalink() .'>'. the_title() .'</a></h5>';
             endwhile;
             endif;
 
