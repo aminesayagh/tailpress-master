@@ -47,6 +47,7 @@
 <style>
       .content_selector{
             max-heigth: 80vh;
+            margin-top: 20px;
             
       }
       .elem_selector_more_chapter{
