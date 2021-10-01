@@ -19,7 +19,11 @@
             $my_query = new WP_Query( $args );
             
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-                  echo '<h5 style="color: #fff"><a href='. the_permalink() .'>'. the_title() .'</a></h5>';
+                  echo '<h5 style="color: #fff">';
+                  echo '<a href='. the_permalink() .'>';
+                  echo the_title();
+                  echo '</a>';
+                  echo '</h5>';
             endwhile;
             endif;
 
