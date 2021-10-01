@@ -45,6 +45,10 @@
       }
 ?>
 <style>
+      .content_selector{
+            max-heigth: 80vh;
+            
+      }
       .elem_selector_more_chapter{
             padding: 12px 20px !important;
             background-color: #000 !important;
