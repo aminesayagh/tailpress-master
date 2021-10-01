@@ -46,10 +46,19 @@
 ?>
 <style>
       .elem_selector_more_chapter{
-            width: 75vw !important;
-            padding: 6px 10px !important;
+            padding: 12px 20px !important;
             background-color: #000 !important;
             
+      }
+      @media (min-width: 1200px){
+            .elem_selector_more_chapter{
+                  width: 50vw !important
+            }
+      }
+      @media (max-width: 1200px){
+            .elem_selector_more_chapter{
+                  width: 75vw !important
+            }
       }
 </style>
 <script>
