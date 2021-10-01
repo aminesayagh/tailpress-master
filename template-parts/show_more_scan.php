@@ -15,7 +15,7 @@
             echo 'category show';
             echo '<pre>';
             echo  var_dump($category_scan);
-            echo '</pre>'
+            echo '</pre>';
             $args = array(
                   'post_type' => 'scan', 'category_name' => $category_scan, 'posts_per_page' => 20
             );
