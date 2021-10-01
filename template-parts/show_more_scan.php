@@ -45,8 +45,15 @@
       }
 ?>
 <script>
-      let selector_element = document.querySelector('.selector_more_chapter .title_selector_more_chapter');
+      let show = false;
+      let selector_element = document.querySelector('.selector_more_chapter');
       selector_element.addEventListener('click', function(){
-            document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
+            if(show){
+                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  show = false
+            } else {
+                  document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
+                  show = true;
+            }
       })
 </script>
