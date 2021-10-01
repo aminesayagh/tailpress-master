@@ -46,7 +46,7 @@
 ?>
 <script>
       let show = false;
-      let selector_element = document.querySelector('.selector_more_chapter');
+      let selector_element = document.querySelector('.container_selector_more_chapter');
       selector_element.addEventListener('click', function(){
             if(show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
