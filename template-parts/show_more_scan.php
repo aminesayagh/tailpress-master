@@ -44,6 +44,7 @@
             echo '</div>';
       }
 ?>
+
 <script>
       let show = false;
       let selector_element = document.querySelector('.container_selector_more_chapter');
