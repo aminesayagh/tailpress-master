@@ -20,7 +20,9 @@
             
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
                   echo '<h5 style="color: #fff">';
-                  echo '<a href='. the_permalink() .'>';
+                  echo '<a href=';
+                  echo the_permalink();
+                  echo '>';
                   echo the_title();
                   echo '</a>';
                   echo '</h5>';
