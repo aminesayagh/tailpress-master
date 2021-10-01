@@ -47,6 +47,7 @@
 <style>
       .content_selector{
             max-heigth: 80vh;
+            overfull: ;
             margin-top: 20px;
             
       }
@@ -55,10 +56,14 @@
             background-color: #000 !important;
             
       }
+      .elem_selector_more_chapter a{
+            width: 100% !important;
+      }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
                   width: 50vw !important
             }
+            
       }
       @media (max-width: 1200px){
             .elem_selector_more_chapter{
