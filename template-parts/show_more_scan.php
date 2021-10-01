@@ -12,6 +12,8 @@
             echo '</div>';
             echo '<div>';
             
+
+            echo $category_scan;
             $args = array(
                   'post_type' => 'scan', 'category' => $category_scan, 'posts_per_page' => 20
             );
