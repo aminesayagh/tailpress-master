@@ -13,7 +13,7 @@
             echo '<div>';
             
             echo 'category show';
-            echo $category_scan;
+            echo  $category_scan[0];
             $args = array(
                   'post_type' => 'scan', 'category_name' => $category_scan, 'posts_per_page' => 20
             );
