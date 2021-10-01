@@ -14,10 +14,10 @@
             
             echo 'category show';
             echo '<pre>';
-            echo  var_dump($category_scan[0]['name']);
+            echo  var_dump($category_scan['name']);
             echo '</pre>';
             $args = array(
-                  'post_type' => 'scan', 'category_name' => $category_scan[0]['name'], 'posts_per_page' => 20
+                  'post_type' => 'scan', 'category_name' => $category_scan['name'], 'posts_per_page' => 20
             );
             
             $my_query = new WP_Query( $args );
