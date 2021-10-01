@@ -17,7 +17,13 @@
             echo  var_dump($category_scan[0]->name);
             echo '</pre>';
             $args = array(
-                  'post_type' => 'scan', 'category_name' => $category_scan[0]->name, 'posts_per_page' => 20
+                  'post_type' => 'scan', 
+                  'category_name' => $category_scan[0]->name, 
+                  'posts_per_page' => 20, 
+                  'order' => 'DESC', 
+                  'orderby' => 'meta_value', 
+                  'meta_key' => 'raking', 
+                  'offset' => $reking_scan - 10
             );
             
             $my_query = new WP_Query( $args );
