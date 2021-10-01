@@ -44,3 +44,6 @@
             echo '</div>';
       }
 ?>
+<script>
+      document.querySelector('.title_selector_more_chapter');
+</script>
