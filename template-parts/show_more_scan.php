@@ -12,7 +12,9 @@
             echo '</div>';
             echo '<div>';
             
-            $args = array('post_type' => 'scan', 'category_name' => $category_scan, 'posts_per_page' => 20);
+            $args = array(
+                  'post_type' => 'scan', 'category_name' => $category_scan, 'posts_per_page' => 20
+            );
             
             $my_query = new WP_Query( $args );
             
