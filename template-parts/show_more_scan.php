@@ -23,7 +23,7 @@
                   'order' => 'DESC', 
                   'orderby' => 'meta_value', 
                   'meta_key' => 'raking', 
-                  'offset' => $reking_scan - 10
+                  'offset' => $reking_scan > 10 ? $reking_scan - 10 : 0,
             );
             
             $my_query = new WP_Query( $args );
