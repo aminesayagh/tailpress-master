@@ -15,7 +15,7 @@
             echo 'category show';
             echo  $category_scan[0];
             $args = array(
-                  'post_type' => 'scan', 'category_name' => $category_scan, 'posts_per_page' => 20
+                  'post_type' => 'scan', 'category_name' => $category_scan[0], 'posts_per_page' => 20
             );
             
             $my_query = new WP_Query( $args );
