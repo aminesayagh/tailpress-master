@@ -44,7 +44,14 @@
             echo '</div>';
       }
 ?>
-
+<style>
+      .elem_selector_more_chapter{
+            width: 75vw !important;
+            padding: 6px 10px !important;
+            background-color: #000 !important;
+            
+      }
+</style>
 <script>
       let show = false;
       let selector_element = document.querySelector('.container_selector_more_chapter');
