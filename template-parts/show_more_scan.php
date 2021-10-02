@@ -46,14 +46,15 @@
 ?>
 <style>
       .content_selector{
-            max-heigth: 80vh;
-            overfull: ;
-            margin-top: 20px;
-            
+            height: 70vh !important;
+            overflow-y: scroll;
+            border-radius: 6px;
+            top: 3rem;
+            padding: 12px 0 !important;
       }
-      .elem_selector_more_chapter{
+      .elem_selector_more_chapter a{
             padding: 12px 20px !important;
-            background-color: #000 !important;
+            background-color: #040613eb !important;
             
       }
       .elem_selector_more_chapter a{
