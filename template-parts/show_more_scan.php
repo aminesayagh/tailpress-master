@@ -25,7 +25,7 @@
             $my_query = new WP_Query( $args );
             echo '<div class="absolute hidden h-0 content_selector">';
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-                  echo '<a href=';
+                  echo '<a class="link_selector_more_chapter" href=';
                   echo the_permalink();
                   echo '>';
                   echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
@@ -50,15 +50,13 @@
             overflow-y: scroll;
             border-radius: 6px;
             top: 3rem;
-            padding: 12px 0 !important;
+            background-color: #040613eb !important;
+      }
+      .elem_selector_more_chapter:nth-child(1){
+            padding: 24px 20px !important;
       }
       .elem_selector_more_chapter{
             padding: 12px 20px !important;
-            background-color: #040613eb !important;
-            
-      }
-      .elem_selector_more_chapter a{
-            width: 100% !important;
       }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
