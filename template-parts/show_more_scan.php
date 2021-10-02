@@ -25,13 +25,13 @@
             $my_query = new WP_Query( $args );
             echo '<div class="absolute hidden h-0 content_selector">';
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-                  echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
                   echo '<a href=';
+                  echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
                   echo the_permalink();
                   echo '>';
                   echo the_title();
-                  echo '</a>';
                   echo '</h5>';
+                  echo '</a>';
             endwhile;
             endif;
             echo '</div>';
@@ -52,7 +52,7 @@
             top: 3rem;
             padding: 12px 0 !important;
       }
-      .elem_selector_more_chapter a{
+      .elem_selector_more_chapter{
             padding: 12px 20px !important;
             background-color: #040613eb !important;
             
