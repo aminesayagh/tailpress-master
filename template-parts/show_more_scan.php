@@ -26,9 +26,9 @@
             echo '<div class="absolute hidden h-0 content_selector">';
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
                   echo '<a href=';
-                  echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
                   echo the_permalink();
                   echo '>';
+                  echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
                   echo the_title();
                   echo '</h5>';
                   echo '</a>';
