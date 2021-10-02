@@ -52,7 +52,7 @@
             top: 3rem;
             background-color: #040613eb !important;
       }
-      .elem_selector_more_chapter:nth-child(1){
+      a:nth-child(1) .elem_selector_more_chapter{
             padding: 24px 20px !important;
       }
       .elem_selector_more_chapter{
