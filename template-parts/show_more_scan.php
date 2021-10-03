@@ -13,7 +13,7 @@
             echo '<h5 class="main_title">';
             echo get_the_title($id_scan);
             echo '</h5>';
-            echo '<span>show more</span>';
+            echo '<span class="px-6 py-2 ml-12 show_more_chapter">show more</span>';
             echo '</div>';
             echo '</div>';
             $args = array(
