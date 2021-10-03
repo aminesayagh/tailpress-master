@@ -55,7 +55,7 @@
             background-color: #040613eb !important;
       }
       .show_more_chapter{
-            color: #9ca3af;
+            color: #9ca3af !important;
       }
       a:nth-child(1) .elem_selector_more_chapter{
             padding: 24px 20px !important;
