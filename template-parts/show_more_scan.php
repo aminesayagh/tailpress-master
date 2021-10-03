@@ -9,10 +9,17 @@
             echo '<div class="relative selector_more_chapter">';
             
             echo '<div name="other_chapter" class="title_selector_more_chapter">';
-            echo '<h5 class="main_title">' . get_the_title($id_scan) . '</h5>';
+            echo '<div>';
+            echo '<h5 class="main_title">';
+            echo get_the_title($id_scan);
+            echo '</h5>';
+            echo '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;"
+	 xml:space="preserve"><g><path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+		c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+		c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>';
             echo '</div>';
-            
-            
+            echo '</div>';
             $args = array(
                   'post_type' => 'scan', 
                   'category_name' => $category_scan[0]->name, 
