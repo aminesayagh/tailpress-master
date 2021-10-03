@@ -13,7 +13,7 @@
             echo '<h5 class="main_title">';
             echo get_the_title($id_scan);
             echo '</h5>';
-            echo '<span class="px-6 py-2 ml-6 show_more_chapter">show more...</span>';
+            echo '<span class="px-6 py-2 show_more_chapter">show more...</span>';
             echo '</div>';
             echo '</div>';
             $args = array(
@@ -53,6 +53,9 @@
             border-radius: 6px;
             top: 3rem;
             background-color: #040613eb !important;
+      }
+      .show_more_chapter{
+            color: #9ca3af;
       }
       a:nth-child(1) .elem_selector_more_chapter{
             padding: 24px 20px !important;
