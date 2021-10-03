@@ -9,11 +9,11 @@
             echo '<div class="relative selector_more_chapter">';
             
             echo '<div name="other_chapter" class="title_selector_more_chapter">';
-            echo '<div class="flex-row">';
+            echo '<div class="flex flex-row items-center flex-nowrap">';
             echo '<h5 class="main_title">';
             echo get_the_title($id_scan);
             echo '</h5>';
-            echo '<span class="px-6 py-2 ml-12 show_more_chapter">show more</span>';
+            echo '<span class="px-6 py-2 ml-12 show_more_chapter">show more...</span>';
             echo '</div>';
             echo '</div>';
             $args = array(
