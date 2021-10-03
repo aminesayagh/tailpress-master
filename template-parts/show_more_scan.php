@@ -6,7 +6,7 @@
       $link_category_scan = 'https://shinobyboy.co/manga/'. $category_scan;
       
       if( $raking_scan ){
-            echo '<div class="relative selector_more_chapter">';
+            echo '<div class="relative container_selector_more_chapter">';
             
             echo '<div name="other_chapter" class="title_selector_more_chapter">';
             echo '<div class="flex flex-row items-center flex-nowrap">';
