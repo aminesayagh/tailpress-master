@@ -220,6 +220,9 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 	if(!empty($post_eng_title)){
 		$query->set('category_name',$post_eng_title);
 	}
+	$query->set('orderby', 'meta_value_num');
+	$query->set('meta_key', 'raking');
+	$query->set('order', 'DESC');
 });
 
 add_action('elementor/query/query_scan_raking', function ($query) {
