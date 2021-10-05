@@ -21,7 +21,7 @@
                   'category_name' => $category_scan[0]->name, 
                   'posts_per_page' => -1, 
                   'order' => 'DESC', 
-                  'orderby' => 'meta_value', 
+                  'orderby' => 'meta_value_num', 
                   'meta_key' => 'raking', 
             );
             
@@ -85,6 +85,11 @@
             } else {
                   document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
                   show = true;
+            }
+      })
+      document.addEventListener('click', function (){
+            if(!show){
+                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
             }
       })
 </script>
