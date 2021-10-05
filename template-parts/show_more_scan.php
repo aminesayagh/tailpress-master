@@ -96,9 +96,12 @@
       selector_element.addEventListener('click', function(){
             if(show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
                   show = false
             } else {
                   document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
+                  document.querySelector('.selector_more_chapter .screen_display').classList.remove('hidden');
+
                   show = true;
             }
       })
@@ -106,6 +109,8 @@
             var name = event.key;
             if(name ==='Escape' && show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
+
                   show = false
             }
       })
@@ -113,7 +118,10 @@
       screen_display.addEventListener('click', (event) =>{
             if(show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
+
                   show = false
             }
       })
 </script>
+screen_display
