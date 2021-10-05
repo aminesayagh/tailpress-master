@@ -42,9 +42,6 @@
             echo '</div>';
             
             wp_reset_postdata();
-            
-            
-            // echo '</div>';
       }
 ?>
 <style>
