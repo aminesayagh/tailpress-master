@@ -104,4 +104,10 @@
                   show = false
             }
       })
+      document.addEventListener('click', (event) =>{
+            if(show){
+                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  show = false
+            }
+      })
 </script>
