@@ -26,7 +26,7 @@
             );
             
             $my_query = new WP_Query( $args );
-            echo '<div class="absolute hidden h-0 content_selector">';
+            echo '<div class="absolute z-20 hidden h-0 content_selector">';
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
                   echo '<a class="link_selector_more_chapter" href=';
                   echo the_permalink();
@@ -38,6 +38,7 @@
             endwhile;
             endif;
             echo '</div>';
+            echo '<div class="absolute z-10 screen_display content_selector"></div>';
             echo '</div>';
             
             wp_reset_postdata();
@@ -47,6 +48,10 @@
       }
 ?>
 <style>
+      .screen_display{
+            height: 100vh;
+            width: 100vw;
+      }
       .content_selector{
             height: 70vh !important;
             overflow-y: auto;
@@ -104,10 +109,11 @@
                   show = false
             }
       })
-      if(show){
-      document.addEventListener('click', (event) =>{
+      let screen_display = document.querySelector('.screen_display')
+      screen_display.addEventListener('click', (event) =>{
+            if(show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
                   show = false
-            })
-      }
+            }
+      })
 </script>
