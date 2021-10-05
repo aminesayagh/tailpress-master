@@ -108,7 +108,7 @@
       })
       document.addEventListener('keyup', (event) => {
             var name = event.key;
-            if(name ==='Escape' && show){
+            if((name === 'Enter' || name ==='Escape') && show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
                   document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
 
