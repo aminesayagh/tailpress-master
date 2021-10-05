@@ -115,12 +115,4 @@
                   show = false
             }
       })
-      let screen_display = document.querySelector('.screen_display')
-      screen_display.addEventListener('click', function(){
-            if(show){
-                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
-                  document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
-                  show = false
-            }
-      })
 </script>
