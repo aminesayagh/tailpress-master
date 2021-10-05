@@ -97,4 +97,11 @@
                   show = true;
             }
       })
+      document.addEventListener('keyup', (event) => {
+            var name = event.key;
+            if(name ==='Escape' && show){
+                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
+                  show = false
+            }
+      })
 </script>
