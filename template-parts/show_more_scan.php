@@ -87,10 +87,4 @@
                   show = true;
             }
       })
-      let myBody = document.querySelector('body');
-      myBody.addEventListener('click', function () {
-            if(show){
-                  document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
-            }
-      })
 </script>
