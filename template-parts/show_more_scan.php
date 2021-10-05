@@ -31,7 +31,7 @@
                   echo '<a class="link_selector_more_chapter" href=';
                   echo the_permalink();
                   echo '>';
-                  echo '<h5 style="color: #fff" class="elem_selector_more_chapter">';
+                  echo '<h5 class="elem_selector_more_chapter">';
                   echo the_title();
                   echo '</h5>';
                   echo '</a>';
@@ -71,6 +71,7 @@
       }
       .elem_selector_more_chapter{
             padding: 12px 20px !important;
+            font-size: 1.1rem !important;
       }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
