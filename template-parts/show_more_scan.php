@@ -49,7 +49,7 @@
 <style>
       .content_selector{
             height: 70vh !important;
-            overflow-y: scroll;
+            overflow-y: auto;
             border-radius: 6px;
             top: 3rem;
             background-color: #040613eb !important;
@@ -58,7 +58,16 @@
             color: #9ca3af !important;
       }
       a:nth-child(1) .elem_selector_more_chapter{
-            padding: 24px 20px !important;
+            padding-top: 24px !important;
+      }
+      a.link_selector_more_chapter h5{
+            color: #D2D2D2 !important;
+      }
+      a.link_selector_more_chapter:visited h5{
+            color: #787979 !important;
+      }
+      a.link_selector_more_chapter:active h5{
+            color: #BF1736 !important;
       }
       .elem_selector_more_chapter{
             padding: 12px 20px !important;
