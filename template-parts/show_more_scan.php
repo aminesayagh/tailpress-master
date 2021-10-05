@@ -51,6 +51,8 @@
       .screen_display{
             height: 100vh;
             width: 100vw;
+            top:0;
+            left: 0;
       }
       .content_selector{
             height: 70vh !important;
@@ -101,7 +103,6 @@
             } else {
                   document.querySelector('.selector_more_chapter .content_selector').classList.remove('hidden');
                   document.querySelector('.selector_more_chapter .screen_display').classList.remove('hidden');
-
                   show = true;
             }
       })
@@ -115,13 +116,11 @@
             }
       })
       let screen_display = document.querySelector('.screen_display')
-      screen_display.addEventListener('click', (event) =>{
+      screen_display.addEventListener('click', function(){
             if(show){
                   document.querySelector('.selector_more_chapter .content_selector').classList.add('hidden');
                   document.querySelector('.selector_more_chapter .screen_display').classList.add('hidden');
-
                   show = false
             }
       })
 </script>
-screen_display
