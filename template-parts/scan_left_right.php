@@ -24,7 +24,7 @@
             echo '<a href=';
             echo the_permalink();
             echo ' class="left_scan">';
-            // echo the_title();
+            echo the_title();
             echo '</a>';
       endwhile;
       } else {
@@ -50,7 +50,7 @@
             echo '<a href=';
             echo the_permalink();
             echo ' class="right_scan">';
-            // echo the_title();
+            echo the_title();
             echo '</a>';
       endwhile;
       } else {
