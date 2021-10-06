@@ -4,6 +4,7 @@
 
       $category_scan = get_the_category($id_scan);
       $raking = get_field('raking', $id_scan);
+      $category_for_link = preg_replace('/\s+/', '-', $category_scan[0]->name);
 
       $args_left = array(
             'post_type' => 'scan',
@@ -28,7 +29,7 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_scan[0]->name ;
+            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_for_link;
             echo '">';
       }
 
@@ -55,7 +56,8 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href="https://shinobyboy.co/manga/'. $category_scan[0]->name ;
+            
+            echo '<a class="left_scan" href="https://shinobyboy.co/manga/'. $category_for_link;
             echo '">';
       }
       echo '</div>'
