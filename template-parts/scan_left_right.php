@@ -1,5 +1,4 @@
 <?php
-      echo '<div class="hidden">';
       $id_scan = get_the_ID();
 
       $category_scan = get_the_category($id_scan);
@@ -60,5 +59,4 @@
             echo '<a class="left_scan" href="https://shinobyboy.co/manga/'. $category_for_link;
             echo '">';
       }
-      echo '</div>'
 ?>
