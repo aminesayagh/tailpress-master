@@ -28,8 +28,8 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href=';
-            echo '>';
+            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_scan ;
+            echo '">';
       }
 
       $args_right = array(
@@ -55,8 +55,8 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href=';
-            echo '>';
+            echo '<a class="left_scan" href="https://shinobyboy.co/manga/'. $category_scan ;
+            echo '">';
       }
       echo '</div>'
 ?>
