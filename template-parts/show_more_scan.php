@@ -3,7 +3,6 @@
 
       $category_scan = get_the_category($id_scan);
       $raking_scan = get_field('raking', $id_scan);
-      $link_category_scan = 'https://shinobyboy.co/manga/'. $category_scan;
       
       if( $raking_scan ){
             echo '<div class="relative selector_more_chapter">';

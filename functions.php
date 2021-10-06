@@ -219,6 +219,7 @@ function wpc_elementor_shortcode_raking_num(){
 add_shortcode('raking_num', 'wpc_elementor_shortcode_raking_num');
 
 add_action('elementor/query/query_scan_filter_by_title_manga', function( $query ) {
+	// order by category imported from title or field data_manga, and meta_key raking
 	$post_title = get_the_title();
 	$data_manga = get_field('data_manga');
 	if( $data_manga ){
@@ -241,4 +242,21 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'raking');
 	$query->set('order', 'DESC');
+});
+
+add_action('elementor/query/query_manga_rated_popularity', function (){
+	$rated_text = get_field('rated');
+	$rated_num = preg_replace('/ Highest Rated All Time /', '', $rated_text);
+	$rated_num = preg_replace('/#/', '', $rated_num);
+	$rated_num = (int)$rated_num;
+	
+	$popular_text = get_field('popular');
+	$popular_num = preg_replace('/ Most Popular All Time /', '', $popular_text);
+	$popular_num = preg_replace('/#/', '', $popular_num);
+	$popular_num = (int)$popular_num;
+
+	$query->set('orderby', 'meta_value_num');
+	$query->set('order', 'ASC');
+	$query->set('meta_key', $popular_num);
+	$query->set('meta_key', $rated_num);
 });
