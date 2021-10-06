@@ -244,20 +244,15 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('order', 'DESC');
 });
 
-add_action('elementor/query/query_manga_rated_popularity', function ($query){
-	$rated_text = get_field('rated');
-	$to_replace = array();
-	$to_replace[0] = '/#/';
-	$to_replace[1] = '/Highest/';
-	$to_replace[2] = '/Rated/';
-	$to_replace[3] = '/All/';
-	$to_replace[4] = '/Time/';
-
-	$rated_num = preg_replace($to_replace, '', $rated_text);
-	$rated_num = (int)$rated_num;
-
-	$query->set('orderby', $rated_num);
+add_action('elementor/query/query_manga_popularity', function ($query){
+	$query->set('orderby', 'meta_value_num');
 	$query->set('order', 'ASC');
-	// $query->set('meta_key', 'popular');
-	// $query->set('meta_key', 'rated');
+	$query->set('meta_key', 'popular_num');
+});
+add_action('elementor/query/query_manga_rated', function ($query){
+	$query->set('orderby', 'meta_value_num');
+	$query->set('order', 'ASC');
+	$query->set('meta_key', 'rated_num');
+});
+add_action('elementor/query/query_manga_date', function ($query){
 });
