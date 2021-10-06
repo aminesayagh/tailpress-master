@@ -43,7 +43,11 @@
       $my_query = new WP_Query($args_right);
 
       if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-            echo '<a href="' . the_permalink() . '" class="right_scan">'. the_title() .'</a>';
+            echo '<a href=';
+            echo the_permalink();
+            echo 'class="right_scan">';
+            echo the_title();
+            echo '</a>';
       endwhile;
       endif;
       echo '</div>'
