@@ -20,14 +20,17 @@
 
       $my_query = new WP_Query($args_left);
 
-      if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+      if( $my_query->have_posts() ) {while( $my_query->have_posts() ) : $my_query->the_post();
             echo '<a href=';
             echo the_permalink();
             echo ' class="left_scan">';
             // echo the_title();
             echo '</a>';
       endwhile;
-      endif;
+      } else {
+            echo '<a class="left_scan" href=';
+            echo '>';
+      }
 
       $args_right = array(
             'post_type' => 'scan',
@@ -44,13 +47,16 @@
 
       $my_query = new WP_Query($args_right);
 
-      if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+      if( $my_query->have_posts() ) { while( $my_query->have_posts() ) : $my_query->the_post();
             echo '<a href=';
             echo the_permalink();
             echo ' class="right_scan">';
             // echo the_title();
             echo '</a>';
       endwhile;
-      endif;
+      } else {
+            echo '<a class="left_scan" href=';
+            echo '>';
+      }
       echo '</div>'
 ?>
