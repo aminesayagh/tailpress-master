@@ -54,6 +54,6 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '">';
+            echo '<a class="right_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '">';
       }
 ?>
