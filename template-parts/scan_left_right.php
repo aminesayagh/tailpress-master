@@ -12,9 +12,9 @@
             'meta_query' => array(
                   array(
                         'key' => 'raking',
-                        'value' => array ( $raking - 1 ),
+                        'value' => $raking - 1,
                         'type' => 'numeric',
-                        'compare' => '=='
+                        // 'compare' => '=='
                   ),
             )
       );
@@ -33,9 +33,9 @@
             'meta_query' => array(
                   array(
                         'key' => 'raking',
-                        'value' => array ( $raking + 1 ),
+                        'value' => $raking + 1,
                         'type' => 'numeric',
-                        'compare' => '=='
+                        // 'compare' => '=='
                   ),
             )
       );
