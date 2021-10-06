@@ -206,6 +206,12 @@ function wpc_elementor_shortcode_show_more_scan(){
 
 add_shortcode('show_more_scan', 'wpc_elementor_shortcode_show_more_scan');
 
+function wpc_elementor_shortcode_scan_left_right(){
+	get_template_part('template-parts/scan_left_right', 'scan_left_right');
+}
+
+add_shortcode('scan_left_right', 'wpc_elementor_shortcode_scan_left_right');
+
 add_action('elementor/query/query_scan_filter_by_title_manga', function( $query ) {
 	$post_title = get_the_title();
 	$data_manga = get_field('data_manga');
