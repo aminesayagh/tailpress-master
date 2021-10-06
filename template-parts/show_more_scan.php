@@ -48,7 +48,7 @@
       .screen_display{
             height: 100vh;
             width: 100vw;
-            top:0;
+            top: 0;
             left: 0;
       }
       .content_selector{
@@ -75,7 +75,7 @@
       }
       .elem_selector_more_chapter{
             padding: 12px 20px !important;
-            font-size: 1.1rem !important;
+            font-size: 1rem !important;
       }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
