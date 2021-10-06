@@ -245,7 +245,13 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 });
 
 add_action('elementor/query/query_manga_rated_popularity', function ($query){
-	$query->set('orderby', 'meta_value_num');
+	$rated_text = get_field('rated');
+	$rated_num = preg_replace('/ Highest Rated All Time /', '', $rated_text);
+	$rated_num = preg_replace('/#/', '', $rated_num);
+	$rated_num = (int)$rated_num;
+
+	$query->set('orderby', $rated_num);
 	$query->set('order', 'ASC');
-	$query->set('meta_key', 'popular');
+	// $query->set('meta_key', 'popular');
+	// $query->set('meta_key', 'rated');
 });
