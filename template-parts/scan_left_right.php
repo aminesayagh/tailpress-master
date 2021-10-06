@@ -1,4 +1,5 @@
 <?php
+      echo '<div class="">';
       $id_scan = get_the_ID();
 
       $category_scan = get_the_category($id_scan);
@@ -45,4 +46,5 @@
             echo '<a href="' . the_permalink() . '" class="right_scan">'. the_title() .'</a>';
       endwhile;
       endif;
+      echo '</div>'
 ?>
