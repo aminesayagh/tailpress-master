@@ -56,4 +56,5 @@
       } else {
             echo '<a class="right_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '">';
       }
+      wp_reset_postdata();
 ?>
