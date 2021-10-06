@@ -242,19 +242,19 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'raking');
 	$query->set('order', 'DESC');
-	return;
+	 wp_reset_postdata();
 });
 
 add_action('elementor/query/query_manga_popularity', function ($query){
 	$query->set('orderby', 'meta_value_num');
 	$query->set('order', 'ASC');
 	$query->set('meta_key', 'popular_num');
-	return;
+	 wp_reset_postdata();
 });
 
 add_action('elementor/query/query_manga_rated', function ($query){
 	$query->set('orderby', 'meta_value_num');
 	$query->set('order', 'ASC');
 	$query->set('meta_key', 'rated_num');
-	return;
+	 wp_reset_postdata();
 });
