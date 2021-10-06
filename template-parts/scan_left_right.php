@@ -45,7 +45,7 @@
       if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
             echo '<a href=';
             echo the_permalink();
-            echo 'class="right_scan">';
+            echo ' class="right_scan">';
             echo the_title();
             echo '</a>';
       endwhile;
