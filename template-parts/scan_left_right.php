@@ -28,7 +28,7 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '">';
+            echo '<a class="left_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '"></a>';
       }
 
       $args_right = array(
@@ -54,7 +54,7 @@
             echo '</a>';
       endwhile;
       } else {
-            echo '<a class="right_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '">';
+            echo '<a class="right_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '"></a>';
       }
       wp_reset_postdata();
 ?>
