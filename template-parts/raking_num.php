@@ -13,6 +13,6 @@
 ?>
 <style>
       .raking_scan h5, .raking_scan h6{
-            color: #000000 !important;
+            color: #FFFFFF !important;
       }
 </style>
