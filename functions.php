@@ -242,6 +242,7 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'raking');
 	$query->set('order', 'DESC');
+	return;
 });
 
 add_action('elementor/query/query_manga_popularity', function ($query){
