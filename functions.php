@@ -257,6 +257,6 @@ add_action('elementor/query/query_manga_rated_popularity', function ($query){
 
 	$query->set('orderby', 'meta_value_num');
 	$query->set('order', 'ASC');
-	$query->set('meta_key', $popular_num);
-	$query->set('meta_key', $rated_num);
+	$query->set('meta_key', 'popular');
+	$query->set('meta_key', 'rated');
 });
