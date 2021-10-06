@@ -244,7 +244,7 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('order', 'DESC');
 });
 
-add_action('elementor/query/query_manga_rated_popularity', function (){
+add_action('elementor/query/query_manga_rated_popularity', function ($query){
 	$rated_text = get_field('rated');
 	$rated_num = preg_replace('/ Highest Rated All Time /', '', $rated_text);
 	$rated_num = preg_replace('/#/', '', $rated_num);
