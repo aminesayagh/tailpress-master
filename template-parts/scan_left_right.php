@@ -4,31 +4,45 @@
       $category_scan = get_the_category($id_scan);
       $raking = get_field('raking', $id_scan);
 
-      $args = array(
+      $args_left = array(
             'post_type' => 'scan',
             'category_name' => $category_scan[0]->name,
-            'posts_per_page' => 3,
+            'posts_per_page' => 1,
             'meta_query' => array(
-                  'relation' => 'AND',
                   array(
                         'key' => 'raking',
-                        'value' => array ( $raking - 1, $raking + 1 ),
+                        'value' => array ( $raking - 1 ),
                         'type' => 'numeric',
-                        'compare' => 'BETWEEN'
+                        'compare' => '=='
                   ),
-                  array(
-                        'key' => 'raking',
-                        'value' => $raking,
-                        'type' => 'numeric',
-                        'compare' => '!=',
-                  )
             )
       );
 
-      $my_query = new WP_Query($args);
+      $my_query = new WP_Query($args_left);
 
       if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-            echo '<a href=' . the_permalink() . '>'. the_title() .'</a>';
+            echo '<a href="' . the_permalink() . '" class="left_scan">'. the_title() .'</a>';
+      endwhile;
+      endif;
+
+      $args_right = array(
+            'post_type' => 'scan',
+            'category_name' => $category_scan[0]->name,
+            'posts_per_page' => 1,
+            'meta_query' => array(
+                  array(
+                        'key' => 'raking',
+                        'value' => array ( $raking + 1 ),
+                        'type' => 'numeric',
+                        'compare' => '=='
+                  ),
+            )
+      );
+
+      $my_query = new WP_Query($args_right);
+
+      if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+            echo '<a href="' . the_permalink() . '" class="right_scan">'. the_title() .'</a>';
       endwhile;
       endif;
 ?>
