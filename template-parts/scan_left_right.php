@@ -10,8 +10,7 @@
             'posts_per_page' => 3,
             'meta_key' => 'raking',
             'meta_value' => array($raking - 1, $raking + 1),
-            'type' => 'numeric',
-            'compare' => 'BETWEEN',
-
+            'meta_type' => 'numeric',
+            'meta_compare' => 'BETWEEN',
       ))
 ?>
