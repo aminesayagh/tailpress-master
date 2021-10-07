@@ -251,7 +251,9 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	// $query->set('meta_key', 'raking');
 	// $query->set('order', 'DESC');
 
-	$query->set('orderby', array('date' => 'DESC', 'raking', 'DESC' ));
+	$array_order =  array('date' => 'DESC', 'raking', 'DESC' );
+
+	$query->set('orderby', $array_order);
 	// $query->set('order', 'DESC');
 
 	// $query->set('meta_query', array(
