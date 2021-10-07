@@ -254,14 +254,14 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('orderby', 'date');
 
 	// order by category
-	$category = get_categories($args_cat);
-	if(!empty($category)) {
-		foreach($categories as $category) {
-			$query->set('order', 'ASC');
-			$query->set('orderby', 'title');
-			$query->set('cat', $category->terms_id);
-		}
-	}
+	// $category = get_categories($args_cat);
+	// if(!empty($category)) {
+	// 	foreach($categories as $category) {
+	// 		$query->set('order', 'ASC');
+	// 		$query->set('orderby', 'title');
+	// 		$query->set('cat', $category->terms_id);
+	// 	}
+	// }
 
 	// order by raking
 	$query->set('orderby', 'meta_value_num');
