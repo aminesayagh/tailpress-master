@@ -239,17 +239,46 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 });
 
 add_action('elementor/query/query_scan_raking', function ($query) {
+	// get category
+	$args_cat = [
+		'orderby' => 'name',
+		'order' => 'ASC',
+		'hide_empty' => 0,
+	];
+
+	
+	$query->set('post_type', 'scan');
+	$query->set('posts_per_page', 18);
+	// order by date
+	$query->set('order', 'DESC');
+	$query->set('orderby', 'date');
+
+	// order by category
+	$category = get_categories($args_cat);
+	if(!empty($category)) {
+		foreach($categories as $category) {
+			$query->set('order', 'ASC');
+			$query->set('orderby', 'title');
+			$query->set('cat', $category->terms_id);
+		}
+	}
+
+	// order by raking
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'raking');
 	$query->set('order', 'DESC');
+
+	
 });
 
 add_action('elementor/query/query_manga_popularity', function ($query){
 	$query->set('post_type', 'manga');
 	$query->set('posts_per_page', 18);
+
 	$query->set('order', 'ASC');
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'popular_num');
+	
 });
 
 add_action('elementor/query/query_manga_rated', function ($query){
