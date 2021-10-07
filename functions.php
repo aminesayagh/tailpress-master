@@ -247,12 +247,19 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 	
 
 	// order by raking
-	$query->set('orderby', 'meta_value_num');
-	$query->set('meta_key', 'raking');
-	$query->set('order', 'DESC');
+	// $query->set('orderby', 'meta_value_num');
+	// $query->set('meta_key', 'raking');
+	// $query->set('order', 'DESC');
 
-	$query->set('orderby', 'date');
-	$query->set('order', 'DESC');
+	$query->set('orderby', array('date' => 'DESC', 'raking', 'DESC' ));
+	// $query->set('order', 'DESC');
+
+	// $query->set('meta_query', array(
+	// 	'relation', 'AND',
+	// 	array(
+			
+	// 	)
+	// ));
 
 	
 });
