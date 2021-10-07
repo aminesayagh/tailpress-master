@@ -248,7 +248,7 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 
 	
 	$query->set('post_type', 'scan');
-	$query->set('posts_per_page', 18);
+	$query->set('posts_per_page', 20);
 	// order by date
 	$query->set('order', 'DESC');
 	$query->set('orderby', 'date');
