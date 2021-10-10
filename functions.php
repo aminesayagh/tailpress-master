@@ -228,7 +228,7 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 		$post_eng_title = null;
 	}
 	if($post_title){
-		$query->set('category_name',$post_title);
+		$query->set('category_name', $post_title);
 	}
 	if(!empty($post_eng_title)){
 		$query->set('category_name',$post_eng_title);
