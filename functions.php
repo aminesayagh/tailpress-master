@@ -262,5 +262,7 @@ add_action('elementor/query/query_product_book', function($query){
 });
 add_action('elementor/query/query_product_art', function($query){
 	$query->set('post_type', 'product');
-	$query->set('category_name', ['Toys and Games', 'Arts, Crafts and Sewing',]);
+	$query->set('category_name', 'Toys and Games');
+	$query->set('category_name', 'Arts, Crafts and Sewing');
+
 });
