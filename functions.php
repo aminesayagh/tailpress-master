@@ -222,7 +222,7 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 	// order by category imported from title or field data_manga, and meta_key raking
 	$post_title = get_the_title();
 	$data_manga = get_field('data_manga');
-	if( $data_manga ){
+	if( !empty($data_manga['english']) ){
 		$post_eng_title = $data_manga['english'];
 	} else {
 		$post_eng_title = null;
@@ -239,16 +239,10 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 });
 
 add_action('elementor/query/query_scan_raking', function ($query) {
-
-	
 	$query->set('post_type', 'scan');
 	$query->set('posts_per_page', 20);
-
 	$array_order =  array('date' => 'DESC', 'raking', 'DESC' );
-
 	$query->set('orderby', $array_order);
-
-	
 });
 
 add_action('elementor/query/query_manga_popularity', function ($query){
