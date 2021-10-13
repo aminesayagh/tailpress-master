@@ -8,8 +8,6 @@
       echo var_dump($id_scan);
       echo var_dump($post_type);
       echo var_dump($title_manga);
-
-      
       
       if($post_type == 'scan'){
             $terms = get_the_terms($id_scan, 'category');
