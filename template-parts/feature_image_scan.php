@@ -11,11 +11,13 @@
             
             $relative_manga = get_page_by_title($terms[0]->name, 'OBJECT', 'manga');
             
-            $cover_manga = get_field('image_manga', $relative_manga->ID );            
+            $cover_manga = get_field('image_manga', $relative_manga->ID );
+            echo $cover_manga;
       } else if ($post_type == 'manga') {
             $cover_manga = get_field('image_manga', $id_scan );
       }
       if( ! empty($cover_manga) ){
+            
             echo '<div class="cover_img">';
             echo '<img src="'. ($cover_manga) .'" alt="'. $title_manga .' cover">';
             echo '</div>';
