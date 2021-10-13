@@ -1,5 +1,4 @@
 <?php
-
       $id_scan = get_the_ID();
       
       $post_type = get_post_type($id_scan);
