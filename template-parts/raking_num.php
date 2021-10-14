@@ -18,6 +18,7 @@
             echo '</h5>';
             echo '</span>';
       }
+      wp_reset_postdata();
 ?>
 <style>
       .raking_scan h5, .raking_scan h6{

@@ -10,4 +10,5 @@
             }
             echo '</section>';
       }
+      wp_reset_postdata();
 ?>
