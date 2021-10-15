@@ -19,7 +19,8 @@
       );
 
       $my_query = new WP_Query($args_left);
-
+      // echo '<div class="scan_navigation_container">';
+      
       if( $my_query->have_posts() ) {while( $my_query->have_posts() ) : $my_query->the_post();
             echo '<a href=';
             echo the_permalink();
@@ -56,5 +57,6 @@
       } else {
             echo '<a class="right_scan" href="https://shinobyboy.co/manga/' . $category_for_link . '"></a>';
       }
-      wp_reset_postdata();
+      // echo '</div>'
+      // wp_reset_postdata();
 ?>
