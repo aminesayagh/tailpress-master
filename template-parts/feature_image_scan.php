@@ -16,9 +16,9 @@
       }
       if( ! empty($cover_manga) ){
             
-            echo '<div class="cover_img">';
+            // echo '<div class="cover_img">';
             echo '<img data="lazyloaded" src="'. $cover_manga .'" alt="'. $title_manga .' cover">';
-            echo '</div>';
+            // echo '</div>';
       }
       wp_reset_postdata();
 ?>
