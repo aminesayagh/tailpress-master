@@ -234,7 +234,6 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 
 add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('post_type', 'scan');
-	$query->set('posts_per_page', 20);
 	$array_order =  array('date' => 'DESC', 'raking', 'DESC' );
 	$query->set('orderby', $array_order);
 	wp_reset_query();
