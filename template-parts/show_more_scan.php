@@ -29,7 +29,7 @@
 
             $list_scan = array_column( $my_query->posts, 'post_type' );
             echo '<pre>';
-            echo $list_scan;
+            echo var_dump($list_scan);
             echo '</pre>';
 
             
