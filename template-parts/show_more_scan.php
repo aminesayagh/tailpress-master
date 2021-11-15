@@ -46,8 +46,9 @@
 ?>
 <style>
       .screen_display{
-            height: 100vh;
-            width: 100vw;
+            min-height: 100vh;
+            min-width: 100vw;
+            position: fixed;
             top: 0;
             left: 0;
       }
