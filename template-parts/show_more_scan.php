@@ -27,7 +27,7 @@
             $my_query = new WP_Query( $args );
             wp_reset_postdata();
 
-            $list_scan = array_column( $my_query->posts, 'raking' );
+            $list_scan = array_column( $my_query->posts, 'post_type' );
             echo '<pre>';
             echo $list_scan;
             echo '</pre>';
