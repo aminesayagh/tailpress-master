@@ -57,8 +57,9 @@
             overflow-y: auto;
             border-radius: 6px;
             position: absolute;
-            top: 3rem;
+            top: 3.4rem;
             background-color: #040613eb !important;
+            overflow-x: hidden;
       }
       .show_more_chapter{
             color: #9ca3af !important;
