@@ -25,6 +25,12 @@
             );
             
             $my_query = new WP_Query( $args );
+            wp_reset_postdata();
+
+            $list_scan = array_column( $my_query->posts, 'raking' );
+            echo $list_scan;
+
+            
             echo '<div class="absolute z-20 hidden h-0 content_selector">';
             if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
                   echo '<a class="link_selector_more_chapter" href=';
@@ -41,7 +47,6 @@
             echo '</div>';
             
             wp_reset_query();
-            wp_reset_postdata();
       }
 ?>
 <style>
