@@ -28,7 +28,9 @@
             wp_reset_postdata();
 
             $list_scan = array_column( $my_query->posts, 'raking' );
+            echo '<pre>';
             echo $list_scan;
+            echo '</pre>';
 
             
             echo '<div class="absolute z-20 hidden h-0 content_selector">';
