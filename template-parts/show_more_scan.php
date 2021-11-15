@@ -55,6 +55,7 @@
             height: 70vh !important;
             overflow-y: auto;
             border-radius: 6px;
+            position: absolute;
             top: 3rem;
             background-color: #040613eb !important;
       }
