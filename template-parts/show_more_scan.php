@@ -51,6 +51,9 @@
             min-width: 100vw;
             position: fixed;
             top: 0;
+            right: 0;
+            z-index: 10;
+            bottom: 0;
             left: 0;
       }
       .content_selector{
@@ -59,6 +62,7 @@
             border-radius: 6px;
             position: absolute;
             top: 3.4rem;
+            z-index: 20;
             background-color: #040613eb !important;
             overflow-x: hidden;
       }
