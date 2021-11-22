@@ -82,13 +82,13 @@
       a:nth-child(1) .elem_selector_more_chapter{
             padding-top: 24px !important;
       }
-      a.link_selector_more_chapter h5{
+      a.link_selector_more_chapter span{
             color: #D2D2D2 !important;
       }
-      a.link_selector_more_chapter:visited h5{
+      a.link_selector_more_chapter:visited span{
             color: #787979 !important;
       }
-      a.link_selector_more_chapter:active h5{
+      a.link_selector_more_chapter:active span{
             color: #BF1736 !important;
       }
       .elem_selector_more_chapter{
