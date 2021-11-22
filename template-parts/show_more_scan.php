@@ -46,12 +46,9 @@
       }
 ?>
 <style>
-      .main_title .elem_selector_more_chapter{
-            font-size: .95rem !important;
-      }
       @media (max-width: 980px){
       .main_title .elem_selector_more_chapter{
-            font-size: .75rem !important;
+            font-size: .75rem;
       }
       }
       .screen_display{
@@ -98,7 +95,7 @@
             padding: 12px 20px !important;
       }
       .main_title, .elem_selector_more_chapter{
-            font-size: 1rem !important;
+            font-size: 0.9rem;
       }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
