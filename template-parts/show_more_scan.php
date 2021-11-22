@@ -46,11 +46,11 @@
       }
 ?>
 <style>
-      .main_title{
+      .main_title .elem_selector_more_chapter{
             font-size: .95rem !important;
       }
       @media (max-width: 980px){
-      .main_title{
+      .main_title .elem_selector_more_chapter{
             font-size: .75rem !important;
       }
       }
