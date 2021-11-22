@@ -17,7 +17,10 @@
       if( ! empty($cover_manga) ){
             
             // echo '<div class="cover_img">';
+            $link_scan = get_permalink($id_scan);
+            echo '<a href="'. $link_scan .'">';
             echo '<img data="lazyloaded" src="'. $cover_manga .'" alt="'. $title_manga .' cover">';
+            echo '</a>';
             // echo '</div>';
       }
       wp_reset_postdata();
