@@ -32,9 +32,9 @@
                   echo '<a class="link_selector_more_chapter" href=';
                   echo the_permalink();
                   echo '>';
-                  echo '<h5 class="elem_selector_more_chapter">';
+                  echo '<span class="elem_selector_more_chapter">';
                   echo the_title();
-                  echo '</h5>';
+                  echo '</span>';
                   echo '</a>';
             endwhile;
             endif;
