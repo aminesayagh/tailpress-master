@@ -5,7 +5,7 @@
 
       if($raking_scan){
             echo '<span class="flex flex-row items-center space-x-0 raking_scan">';
-            echo '<h6>#<h6><h5>';
+            echo '<h6>#</h6><h5>';
             if($raking_scan >= 1000 ) {
                   echo $raking_scan + 1;
             } else if($raking_scan >= 100 && $raking_scan < 1000) {
@@ -23,5 +23,7 @@
 <style>
       .raking_scan h5, .raking_scan h6{
             color: #FFFFFF !important;
+            font-size: 1rem !important;
+            font-weight: 600;
       }
 </style>
