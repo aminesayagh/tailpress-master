@@ -46,6 +46,14 @@
       }
 ?>
 <style>
+      .title_selector_more_chapter .main_title{
+            font-size: .95rem;
+      }
+      @media (max-width: 980px){
+      .title_selector_more_chapter .main_title{
+            font-size: .8rem;
+      }
+      }
       .screen_display{
             min-height: 100vh;
             min-width: 100vw;
@@ -68,6 +76,11 @@
       }
       .show_more_chapter{
             color: #9ca3af !important;
+      }
+      @media (max-width: 980px){
+            .show_more_chapter{
+                  display: hidden;
+            }
       }
       a:nth-child(1) .elem_selector_more_chapter{
             padding-top: 24px !important;
