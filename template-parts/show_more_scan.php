@@ -95,7 +95,7 @@
             padding: 12px 20px !important;
       }
       .main_title, .elem_selector_more_chapter{
-            font-size: 0.9rem;
+            font-size: 0.8rem;
       }
       @media (min-width: 1200px){
             .elem_selector_more_chapter{
