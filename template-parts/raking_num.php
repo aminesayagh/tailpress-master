@@ -25,5 +25,7 @@
             color: #FFFFFF !important;
             font-size: 1rem !important;
             font-weight: 600 !important;
+            font-style: italic;
+            letter-spacing: 0.1rem;
       }
 </style>
