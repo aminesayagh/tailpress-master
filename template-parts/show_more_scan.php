@@ -32,9 +32,9 @@
                   echo '<a class="link_selector_more_chapter" href=';
                   echo the_permalink();
                   echo '>';
-                  echo '<span class="elem_selector_more_chapter">';
+                  echo '<h6 class="elem_selector_more_chapter">';
                   echo the_title();
-                  echo '</span>';
+                  echo '</h6>';
                   echo '</a>';
             endwhile;
             endif;
@@ -82,13 +82,13 @@
       a:nth-child(1) .elem_selector_more_chapter{
             padding-top: 24px !important;
       }
-      a.link_selector_more_chapter span{
+      a.link_selector_more_chapter h6{
             color: #D2D2D2 !important;
       }
-      a.link_selector_more_chapter:visited span{
+      a.link_selector_more_chapter:visited h6{
             color: #787979 !important;
       }
-      a.link_selector_more_chapter:active span{
+      a.link_selector_more_chapter:active h6{
             color: #BF1736 !important;
       }
       .elem_selector_more_chapter{
