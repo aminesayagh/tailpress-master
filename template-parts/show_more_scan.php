@@ -79,7 +79,7 @@
       }
       @media (max-width: 980px){
             .show_more_chapter{
-                  display: hidden !important;
+                  display: none !important;
             }
       }
       a:nth-child(1) .elem_selector_more_chapter{
