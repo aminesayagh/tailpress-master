@@ -46,12 +46,12 @@
       }
 ?>
 <style>
-      .title_selector_more_chapter .main_title{
-            font-size: .95rem;
+      .main_title{
+            font-size: .95rem !important;
       }
       @media (max-width: 980px){
-      .title_selector_more_chapter .main_title{
-            font-size: .75rem;
+      .main_title{
+            font-size: .75rem !important;
       }
       }
       .screen_display{
