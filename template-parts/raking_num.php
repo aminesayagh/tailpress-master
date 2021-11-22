@@ -24,6 +24,6 @@
       .raking_scan h5, .raking_scan h6{
             color: #FFFFFF !important;
             font-size: 1rem !important;
-            font-weight: 600;
+            font-weight: 600 !important;
       }
 </style>
