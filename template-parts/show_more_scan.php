@@ -9,9 +9,9 @@
             
             echo '<div name="other_chapter" class="title_selector_more_chapter">';
             echo '<div class="flex flex-row items-center flex-nowrap">';
-            echo '<h5 class="main_title">';
+            echo '<span class="main_title">';
             echo get_the_title($id_scan);
-            echo '</h5>';
+            echo '</span>';
             echo '<span class="px-4 py-2 show_more_chapter">show more...</span>';
             echo '</div>';
             echo '</div>';
