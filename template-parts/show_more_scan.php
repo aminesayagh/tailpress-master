@@ -51,7 +51,7 @@
       }
       @media (max-width: 980px){
       .title_selector_more_chapter .main_title{
-            font-size: .8rem;
+            font-size: .75rem;
       }
       }
       .screen_display{
@@ -79,7 +79,7 @@
       }
       @media (max-width: 980px){
             .show_more_chapter{
-                  display: hidden;
+                  display: hidden !important;
             }
       }
       a:nth-child(1) .elem_selector_more_chapter{
