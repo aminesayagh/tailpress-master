@@ -7,11 +7,11 @@
 	}
       $args = array(
             'post_type' => 'scan',
-            'category__in' => $title_of_manga,
+            'category__in' => $mangas_titles,
             'post_per_page' => 10,
       );
 
-      echo var_dump($title_of_manga);
+      echo var_dump($mangas_titles);
       $my_query = new WP_Query($args);
       if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
             echo var_dump(the_title());
