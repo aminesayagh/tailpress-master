@@ -223,12 +223,6 @@ function wpc_elementor_shortcode_raking_num(){
 
 add_shortcode('raking_num', 'wpc_elementor_shortcode_raking_num');
 
-function wpc_elementor_shortcode_test_query(){
-	get_template_part('template-parts/test_query_favorite', 'test_query_favorite');
-}
-
-add_shortcode('test_query_favorite', 'wpc_elementor_shortcode_test_query');
-
 add_action('elementor/query/query_scan_filter_by_title_manga', function( $query ) {
 	// order by category imported from title or field data_manga, and meta_key raking
 	$post_title = get_the_title();
