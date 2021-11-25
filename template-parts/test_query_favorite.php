@@ -1,6 +1,6 @@
 <?php
 	$favorites = $_COOKIE['my_favorites_mangas'];
-      $favorite_array = array($favorites);
+      $favorite_array = array($_COOKIE['my_favorites_mangas']);
       $args = array('post_type' => 'manga', 'post__in' => $favorite);
       echo var_dump($favorite_array);
       $my_query = new WP_Query($args);
