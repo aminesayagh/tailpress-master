@@ -272,7 +272,7 @@ add_action('elementor/query/query_my_favorites_mangas', function($query){
 	$listCookie = $_COOKIE['my_favorites_mangas'];
 	
 	$query->set('post_type', 'mangas');
-	$query->set('post__in', $listCookie);
+	$query->set('post__in', array($listCookie));
 	$query->set('posts_per_page', 18);
 	$query->set('order', 'ASC');
 	wp_reset_query();
