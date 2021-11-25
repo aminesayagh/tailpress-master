@@ -6,14 +6,14 @@
 		array_push($mangas_titles, $title_of_manga);
 	}
       $args = array(
-            'post_type' => 'scans',
+            'post_type' => 'scan',
             'category__in' => $title_of_manga
       );
 
       $my_query = new WP_Query($args);
 
       if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-            echo the_title();
+            echo var_dump(the_title());
             endwhile;
             endif;
             wp_reset_query();
