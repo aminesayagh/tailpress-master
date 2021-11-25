@@ -264,7 +264,7 @@ add_action('elementor/query/query_manga_rated', function ($query){
 });
 
 add_action('elementor/query/query_my_favorites_mangas', function($query){
-	$listCookie = $_COOKIE[$my_favorites_mangas];
+	$listCookie = $_COOKIE['my_favorites_mangas'];
 	
 	$query->set('post_type', 'mangas');
 	$query->set('post__in', $listCookie);
