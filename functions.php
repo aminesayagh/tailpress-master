@@ -245,7 +245,7 @@ add_action('elementor/query/query_scan_raking', function ($query) {
 });
 
 add_action('elementor/query/query_manga_popularity', function ($query){
-	$query->set('post_type', 'manga');
+	$query->set('post_type', 'mangas');
 	$query->set('posts_per_page', 18);
 
 	$query->set('order', 'ASC');
@@ -255,10 +255,20 @@ add_action('elementor/query/query_manga_popularity', function ($query){
 });
 
 add_action('elementor/query/query_manga_rated', function ($query){
-	$query->set('post_type', 'manga');
+	$query->set('post_type', 'mangas');
 	$query->set('posts_per_page', 18);
 	$query->set('order', 'ASC');
 	$query->set('orderby', 'meta_value_num');
 	$query->set('meta_key', 'rated_num');
+	wp_reset_query();
+});
+
+add_action('elementor/query/query_my_favorites_mangas', function($query){
+	$listCookie = $_COOKIE[$my_favorites_mangas];
+	
+	$query->set('post_type', 'mangas');
+	$query->set('post__in', $listCookie);
+	$query->set('posts_per_page', 18);
+	$query->set('order', 'ASC');
 	wp_reset_query();
 });
