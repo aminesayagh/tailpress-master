@@ -7,7 +7,7 @@
 	}
       $args = array(
             'post_type' => 'scan',
-            'category__in' => $mangas_titles[0],
+            'category_name' => $mangas_titles[0],
             'post_per_page' => 10,
       );
 
