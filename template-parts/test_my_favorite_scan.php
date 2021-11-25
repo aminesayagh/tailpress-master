@@ -8,8 +8,6 @@
       $args = array(
             'post_type' => 'scan',
             'category_name' => $mangas_titles,
-            'post_per_page' => 10,
-            'order' => 'DESC',
             
       );
 
