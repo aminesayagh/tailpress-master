@@ -8,7 +8,6 @@
             echo the_permalink();
             echo the_title();
       endwhile;
-      } else {
       }
       
 ?>
