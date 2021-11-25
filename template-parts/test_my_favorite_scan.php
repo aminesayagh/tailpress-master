@@ -3,7 +3,7 @@
 	$mangas_titles = '';
 	foreach ($favorite_manga_array as $manga){
 		$title_of_manga = get_the_title($manga);
-            $mangas_titles = $mangas_titles + ',' + $title_of_manga;
+            $mangas_titles = $mangas_titles . ',' . $title_of_manga;
 	}
       $args = array(
             'post_type' => 'scan',
