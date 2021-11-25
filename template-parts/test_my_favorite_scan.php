@@ -6,7 +6,7 @@
 		array_push($mangas_titles, $title_of_manga);
 	}
       $args = array(
-            'post_type' => 'scan',
+            'post_type' => 'scans',
             'category__in' => $title_of_manga
       );
 
