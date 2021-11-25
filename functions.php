@@ -271,8 +271,8 @@ add_action('elementor/query/query_manga_rated', function ($query){
 add_action('elementor/query/query_my_favorites_mangas', function($query){
 	$listCookie = $_COOKIE['my_favorites_mangas'];
 	
-	$query->set('post_type', 'mangas');
-	$query->set('posts_per_page', 18);
+	$query->set('post_type', 'manga');
+	// $query->set('posts_per_page', 18);
 	$query->set('post__in', array($listCookie));
 	wp_reset_query();
 });
