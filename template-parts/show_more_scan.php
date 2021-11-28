@@ -46,7 +46,8 @@
             }
       }
       if(is_singular('manga')){
-            echo 'coco';
+            $title = the_title();
+            echo $title;
       }
 ?>
 <style>
