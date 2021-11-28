@@ -242,6 +242,19 @@ add_action('elementor/query/query_scan_filter_by_title_manga', function( $query 
 	wp_reset_query();
 });
 
+add_action('elementor/query/query_scan_filter_by_title_manga_before', function( $query ) {
+	// order by category imported from title or field data_manga, and meta_key raking
+	$post_title = get_the_title();
+	$data_manga = get_field('data_manga');
+	$post_eng_title = $data_manga['english'];
+	$query->set('category_name', $post_eng_title);
+	$query->set('category_name', $post_title);
+	$query->set('orderby', 'meta_value_num');
+	$query->set('meta_key', 'raking');
+	$query->set('order', 'ASC');
+	wp_reset_query();
+});
+
 add_action('elementor/query/query_scan_raking', function ($query) {
 	$query->set('post_type', 'scan');
 	$array_order =  array('date' => 'DESC', 'raking', 'DESC' );
