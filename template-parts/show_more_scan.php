@@ -18,7 +18,7 @@
                   $args = array(
                         'post_type' => 'scan', 
                         'category_name' => $category_scan[0]->name, 
-                        'posts_per_page' => -1, 
+                        'posts_per_page' => -1,
                         'order' => 'DESC', 
                         'orderby' => 'meta_value_num', 
                         'meta_key' => 'raking',
@@ -47,7 +47,17 @@
       }
       if(is_singular('manga')){
             $title = the_title();
-            echo $title;
+            $args = array(
+                  'post_type' => 'scan',
+                  'category_name' => $title,
+                  'posts_per_page' => -1, 
+                  'order' => 'DESC', 
+                  'orderby' => 'meta_value_num', 
+                  'meta_key' => 'raking',
+            );
+            
+            $my_query = new WP_Query( $args );
+            
       }
 ?>
 <style>
