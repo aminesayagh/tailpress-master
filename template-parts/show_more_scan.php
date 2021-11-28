@@ -21,7 +21,7 @@
                   'posts_per_page' => -1, 
                   'order' => 'DESC', 
                   'orderby' => 'meta_value_num', 
-                  'meta_key' => 'raking', 
+                  'meta_key' => 'raking',
             );
             
             $my_query = new WP_Query( $args );
