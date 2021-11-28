@@ -299,5 +299,4 @@ add_action('elementor/query/query_search_scan', function($query){
 	$query->set('order', 'ASC');
 	$query->set('orderby', 'date');
 	wp_reset_query();
-
 });
