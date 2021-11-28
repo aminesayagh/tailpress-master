@@ -296,7 +296,7 @@ add_action('elementor/query/query_search_manga', function($query){
 
 add_action('elementor/query/query_search_scan', function($query){
 	$query->set('post_type', 'scan');
-	$query->set('order', 'ASC');
+	$query->set('order', 'DESC');
 	$query->set('orderby', 'date');
 	wp_reset_query();
 });
