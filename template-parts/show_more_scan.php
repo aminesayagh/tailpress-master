@@ -1,48 +1,52 @@
 <?php
       $id_scan = get_the_ID();
-
-      $category_scan = get_the_category($id_scan);
-      $raking_scan = get_field('raking', $id_scan);
+      if(is_singular('scan')){
+            $category_scan = get_the_category($id_scan);
+            $raking_scan = get_field('raking', $id_scan);
+            
+            if( $raking_scan ){
+                  echo '<div class="relative selector_more_chapter">';
+                  
+                  echo '<div name="other_chapter" class="title_selector_more_chapter">';
+                  echo '<div class="flex flex-row items-center flex-nowrap">';
+                  echo '<span class="main_title">';
+                  echo get_the_title($id_scan);
+                  echo '</span>';
+                  echo '<span class="px-4 py-2 show_more_chapter">show more...</span>';
+                  echo '</div>';
+                  echo '</div>';
+                  $args = array(
+                        'post_type' => 'scan', 
+                        'category_name' => $category_scan[0]->name, 
+                        'posts_per_page' => -1, 
+                        'order' => 'DESC', 
+                        'orderby' => 'meta_value_num', 
+                        'meta_key' => 'raking',
+                  );
+                  
+                  $my_query = new WP_Query( $args );
+                  wp_reset_postdata();
       
-      if( $raking_scan ){
-            echo '<div class="relative selector_more_chapter">';
-            
-            echo '<div name="other_chapter" class="title_selector_more_chapter">';
-            echo '<div class="flex flex-row items-center flex-nowrap">';
-            echo '<span class="main_title">';
-            echo get_the_title($id_scan);
-            echo '</span>';
-            echo '<span class="px-4 py-2 show_more_chapter">show more...</span>';
-            echo '</div>';
-            echo '</div>';
-            $args = array(
-                  'post_type' => 'scan', 
-                  'category_name' => $category_scan[0]->name, 
-                  'posts_per_page' => -1, 
-                  'order' => 'DESC', 
-                  'orderby' => 'meta_value_num', 
-                  'meta_key' => 'raking',
-            );
-            
-            $my_query = new WP_Query( $args );
-            wp_reset_postdata();
-
-            echo '<div class="absolute z-20 hidden h-0 content_selector">';
-            if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-                  echo '<a class="link_selector_more_chapter" href=';
-                  echo the_permalink();
-                  echo '>';
-                  echo '<h6 class="elem_selector_more_chapter">';
-                  echo the_title();
-                  echo '</h6>';
-                  echo '</a>';
-            endwhile;
-            endif;
-            echo '</div>';
-            echo '<div class="fixed z-10 hidden screen_display"></div>';
-            echo '</div>';
-            
-            wp_reset_query();
+                  echo '<div class="absolute z-20 hidden h-0 content_selector">';
+                  if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+                        echo '<a class="link_selector_more_chapter" href=';
+                        echo the_permalink();
+                        echo '>';
+                        echo '<h6 class="elem_selector_more_chapter">';
+                        echo the_title();
+                        echo '</h6>';
+                        echo '</a>';
+                  endwhile;
+                  endif;
+                  echo '</div>';
+                  echo '<div class="fixed z-10 hidden screen_display"></div>';
+                  echo '</div>';
+                  
+                  wp_reset_query();
+            }
+      }
+      if(is_singular('manga')){
+            echo 'coco';
       }
 ?>
 <style>
